@@ -1,0 +1,530 @@
+{
+  "version": 1,
+  "currency": "eb",
+  "verify": true,
+  "note": "Generic item names. Stats approximate the CP2020 rulebook and must be verified.",
+  "startingMoney": {
+    "method": "monthlySalary * multiplier",
+    "multiplierDice": "1d6",
+    "multiplierNote": "Roll 1d6 and divide by 3 (round up) for months of savings; adjust to taste.",
+    "salaryBySpecialAbilityLevel": {
+      "solo": [
+        2000,
+        2500,
+        3000,
+        4500,
+        7000,
+        8000,
+        9000,
+        10000,
+        12000,
+        15000
+      ],
+      "rocker": [
+        1000,
+        1500,
+        2000,
+        5000,
+        8000,
+        10000,
+        12000,
+        15000,
+        20000,
+        25000
+      ],
+      "netrunner": [
+        1000,
+        2000,
+        3000,
+        4000,
+        5000,
+        7000,
+        8000,
+        9000,
+        10000,
+        15000
+      ],
+      "media": [
+        1000,
+        1200,
+        1500,
+        2000,
+        3000,
+        4000,
+        5000,
+        7000,
+        10000,
+        12000
+      ],
+      "nomad": [
+        1000,
+        1000,
+        1000,
+        1500,
+        1500,
+        2000,
+        2000,
+        3000,
+        4000,
+        5000
+      ],
+      "fixer": [
+        1500,
+        2000,
+        3000,
+        3500,
+        4000,
+        5000,
+        7000,
+        8000,
+        9000,
+        10000
+      ],
+      "cop": [
+        1000,
+        1200,
+        3000,
+        3000,
+        4000,
+        5000,
+        7000,
+        9000,
+        12000,
+        15000
+      ],
+      "corporate": [
+        1500,
+        3000,
+        3500,
+        4000,
+        5000,
+        6000,
+        7500,
+        9000,
+        12000,
+        15000
+      ],
+      "techie": [
+        1000,
+        2000,
+        3000,
+        4000,
+        5000,
+        6000,
+        7000,
+        8000,
+        9000,
+        10000
+      ],
+      "medtechie": [
+        1600,
+        3000,
+        4000,
+        5000,
+        7000,
+        8000,
+        10000,
+        12000,
+        15000,
+        20000
+      ]
+    }
+  },
+  "weapons": [
+    {
+      "id": "light_pistol",
+      "name": "Light pistol",
+      "type": "pistol",
+      "skill": "handgun",
+      "wa": 0,
+      "damage": "1d6+1",
+      "shots": 10,
+      "rof": 2,
+      "cost": 150
+    },
+    {
+      "id": "medium_pistol",
+      "name": "Medium pistol",
+      "type": "pistol",
+      "skill": "handgun",
+      "wa": 0,
+      "damage": "2d6+1",
+      "shots": 10,
+      "rof": 2,
+      "cost": 250
+    },
+    {
+      "id": "heavy_pistol",
+      "name": "Heavy pistol",
+      "type": "pistol",
+      "skill": "handgun",
+      "wa": 0,
+      "damage": "3d6",
+      "shots": 8,
+      "rof": 2,
+      "cost": 350
+    },
+    {
+      "id": "very_heavy_pistol",
+      "name": "Very heavy pistol",
+      "type": "pistol",
+      "skill": "handgun",
+      "wa": -1,
+      "damage": "4d6",
+      "shots": 6,
+      "rof": 1,
+      "cost": 500
+    },
+    {
+      "id": "light_smg",
+      "name": "Light SMG",
+      "type": "smg",
+      "skill": "submachinegun",
+      "wa": 0,
+      "damage": "1d6+1",
+      "shots": 30,
+      "rof": 20,
+      "cost": 400
+    },
+    {
+      "id": "medium_smg",
+      "name": "Medium SMG",
+      "type": "smg",
+      "skill": "submachinegun",
+      "wa": 0,
+      "damage": "2d6+1",
+      "shots": 40,
+      "rof": 20,
+      "cost": 500
+    },
+    {
+      "id": "heavy_smg",
+      "name": "Heavy SMG",
+      "type": "smg",
+      "skill": "submachinegun",
+      "wa": -1,
+      "damage": "3d6",
+      "shots": 35,
+      "rof": 25,
+      "cost": 700
+    },
+    {
+      "id": "assault_rifle",
+      "name": "Assault rifle",
+      "type": "rifle",
+      "skill": "rifle",
+      "wa": 1,
+      "damage": "5d6",
+      "shots": 35,
+      "rof": 30,
+      "cost": 1000
+    },
+    {
+      "id": "sniper_rifle",
+      "name": "Sniper rifle",
+      "type": "rifle",
+      "skill": "rifle",
+      "wa": 2,
+      "damage": "6d6",
+      "shots": 5,
+      "rof": 1,
+      "cost": 1500
+    },
+    {
+      "id": "shotgun",
+      "name": "Combat shotgun",
+      "type": "shotgun",
+      "skill": "rifle",
+      "wa": 0,
+      "damage": "4d6",
+      "shots": 8,
+      "rof": 1,
+      "cost": 600
+    },
+    {
+      "id": "knife",
+      "name": "Knife",
+      "type": "melee",
+      "skill": "melee",
+      "wa": 0,
+      "damage": "1d6",
+      "cost": 20
+    },
+    {
+      "id": "club",
+      "name": "Club / baton",
+      "type": "melee",
+      "skill": "melee",
+      "wa": 0,
+      "damage": "1d6",
+      "cost": 10
+    },
+    {
+      "id": "sword",
+      "name": "Sword",
+      "type": "melee",
+      "skill": "melee",
+      "wa": 0,
+      "damage": "2d6+2",
+      "cost": 200
+    },
+    {
+      "id": "monoblade",
+      "name": "Monoblade",
+      "type": "melee",
+      "skill": "melee",
+      "wa": 1,
+      "damage": "4d6",
+      "cost": 600
+    },
+    {
+      "id": "grenade",
+      "name": "Fragmentation grenade",
+      "type": "thrown",
+      "skill": "athletics",
+      "wa": 0,
+      "damage": "7d6",
+      "cost": 30
+    }
+  ],
+  "armor": [
+    {
+      "id": "leather_jacket",
+      "name": "Heavy leather jacket",
+      "sp": 4,
+      "covers": [
+        "torso",
+        "arms"
+      ],
+      "ev": 0,
+      "cost": 50
+    },
+    {
+      "id": "kevlar_tshirt",
+      "name": "Kevlar T-shirt / vest",
+      "sp": 10,
+      "covers": [
+        "torso"
+      ],
+      "ev": 0,
+      "cost": 90
+    },
+    {
+      "id": "light_armor_jacket",
+      "name": "Light armor jacket",
+      "sp": 14,
+      "covers": [
+        "torso",
+        "arms"
+      ],
+      "ev": 0,
+      "cost": 150
+    },
+    {
+      "id": "medium_armor_jacket",
+      "name": "Medium armor jacket",
+      "sp": 18,
+      "covers": [
+        "torso",
+        "arms"
+      ],
+      "ev": 1,
+      "cost": 200
+    },
+    {
+      "id": "flak_vest",
+      "name": "Flak vest",
+      "sp": 20,
+      "covers": [
+        "torso"
+      ],
+      "ev": 1,
+      "cost": 200
+    },
+    {
+      "id": "flak_pants",
+      "name": "Flak pants",
+      "sp": 20,
+      "covers": [
+        "legs"
+      ],
+      "ev": 1,
+      "cost": 200
+    },
+    {
+      "id": "heavy_vest",
+      "name": "Heavy combat vest",
+      "sp": 25,
+      "covers": [
+        "torso"
+      ],
+      "ev": 3,
+      "cost": 250
+    },
+    {
+      "id": "steel_helmet",
+      "name": "Steel helmet",
+      "sp": 14,
+      "covers": [
+        "head"
+      ],
+      "ev": 0,
+      "cost": 20
+    },
+    {
+      "id": "nylon_helmet",
+      "name": "Nylon combat helmet",
+      "sp": 20,
+      "covers": [
+        "head"
+      ],
+      "ev": 0,
+      "cost": 100
+    },
+    {
+      "id": "full_body_armor",
+      "name": "Full body armor suit",
+      "sp": 25,
+      "covers": [
+        "head",
+        "torso",
+        "arms",
+        "legs"
+      ],
+      "ev": 2,
+      "cost": 600
+    }
+  ],
+  "cyberware": [
+    {
+      "id": "interface_plugs",
+      "name": "Interface plugs",
+      "category": "neuralware",
+      "humanityCost": "1d6",
+      "cost": 200,
+      "note": "Required for netrunning."
+    },
+    {
+      "id": "neural_processor",
+      "name": "Neural processor",
+      "category": "neuralware",
+      "humanityCost": "1d6",
+      "cost": 1000,
+      "note": "Base for most neuralware."
+    },
+    {
+      "id": "reflex_booster",
+      "name": "Reflex booster",
+      "category": "neuralware",
+      "humanityCost": "2d6",
+      "cost": 1000,
+      "effect": "+1 Initiative",
+      "requires": [
+        "neural_processor"
+      ]
+    },
+    {
+      "id": "smartgun_link",
+      "name": "Smartgun link",
+      "category": "neuralware",
+      "humanityCost": "2d6",
+      "cost": 100,
+      "effect": "+2 to hit with smartguns",
+      "requires": [
+        "interface_plugs"
+      ]
+    },
+    {
+      "id": "cyberoptic",
+      "name": "Cyberoptic (per eye)",
+      "category": "cyberoptics",
+      "humanityCost": "2d6",
+      "cost": 500
+    },
+    {
+      "id": "low_light",
+      "name": "Low-light vision option",
+      "category": "cyberoptics",
+      "humanityCost": "1",
+      "cost": 200,
+      "requires": [
+        "cyberoptic"
+      ]
+    },
+    {
+      "id": "cyberaudio",
+      "name": "Cyberaudio",
+      "category": "cyberaudio",
+      "humanityCost": "2d6",
+      "cost": 500
+    },
+    {
+      "id": "cyberarm",
+      "name": "Cyberarm",
+      "category": "cyberlimbs",
+      "humanityCost": "2d6+2",
+      "cost": 3000
+    },
+    {
+      "id": "cyberleg",
+      "name": "Cyberleg",
+      "category": "cyberlimbs",
+      "humanityCost": "2d6",
+      "cost": 2000
+    },
+    {
+      "id": "muscle_bone_lace",
+      "name": "Muscle & bone lace",
+      "category": "implants",
+      "humanityCost": "2d6",
+      "cost": 1500,
+      "effect": "+2 BODY"
+    },
+    {
+      "id": "skinweave",
+      "name": "Skinweave",
+      "category": "implants",
+      "humanityCost": "2d6",
+      "cost": 2000,
+      "effect": "SP 12 all locations"
+    },
+    {
+      "id": "subdermal_armor",
+      "name": "Subdermal armor",
+      "category": "implants",
+      "humanityCost": "3d6",
+      "cost": 1200,
+      "effect": "SP 18 torso"
+    },
+    {
+      "id": "rippers",
+      "name": "Rippers (finger blades)",
+      "category": "fashionware_weapons",
+      "humanityCost": "1d6",
+      "cost": 400,
+      "effect": "1d6+3 melee damage"
+    },
+    {
+      "id": "wolvers",
+      "name": "Wolvers (knuckle blades)",
+      "category": "fashionware_weapons",
+      "humanityCost": "2d6",
+      "cost": 600,
+      "effect": "3d6 melee damage"
+    },
+    {
+      "id": "light_tattoo",
+      "name": "Light tattoo",
+      "category": "fashionware",
+      "humanityCost": "1",
+      "cost": 40
+    },
+    {
+      "id": "biomonitor",
+      "name": "Biomonitor",
+      "category": "fashionware",
+      "humanityCost": "0",
+      "cost": 700
+    }
+  ]
+}

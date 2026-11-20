@@ -1,0 +1,272 @@
+{
+  "version": 1,
+  "range": {
+    "min": 2,
+    "max": 10
+  },
+  "pointMethods": [
+    {
+      "id": "random",
+      "name": "Random",
+      "description": "Roll 9d10; the total is the pool you distribute across the nine stats.",
+      "dice": "9d10"
+    },
+    {
+      "id": "fast",
+      "name": "Fast",
+      "description": "Roll 1d10 for each stat in order; reroll any result of 2 or less. No distribution step.",
+      "dice": "1d10",
+      "rerollAtOrBelow": 2
+    },
+    {
+      "id": "cinematic",
+      "name": "Cinematic",
+      "description": "The GM picks a fixed pool based on how important the character is.",
+      "presets": [
+        {
+          "id": "major_hero",
+          "name": "Major hero",
+          "points": 80
+        },
+        {
+          "id": "major_supporting",
+          "name": "Major supporting character",
+          "points": 70
+        },
+        {
+          "id": "minor_hero",
+          "name": "Minor hero",
+          "points": 75
+        },
+        {
+          "id": "minor_supporting",
+          "name": "Minor supporting character",
+          "points": 60
+        },
+        {
+          "id": "average",
+          "name": "Average person",
+          "points": 50
+        }
+      ],
+      "verify": true
+    }
+  ],
+  "stats": [
+    {
+      "key": "INT",
+      "name": "Intelligence",
+      "short": "Brains, memory, perception and problem solving.",
+      "usedFor": [
+        "Awareness/Notice",
+        "Education",
+        "Programming",
+        "pickup skill points"
+      ]
+    },
+    {
+      "key": "REF",
+      "name": "Reflexes",
+      "short": "Speed, coordination and hand-eye control. The key combat stat.",
+      "usedFor": [
+        "Firearms",
+        "Brawling",
+        "Dodge",
+        "Driving",
+        "Initiative",
+        "pickup skill points"
+      ]
+    },
+    {
+      "key": "TECH",
+      "name": "Technical Ability",
+      "short": "Building, repairing and operating machines and tools.",
+      "usedFor": [
+        "Basic Tech",
+        "CyberTech",
+        "First Aid",
+        "Pick Lock"
+      ]
+    },
+    {
+      "key": "COOL",
+      "name": "Cool / Willpower",
+      "short": "Nerve under pressure and how intimidating you are.",
+      "usedFor": [
+        "Intimidate",
+        "Interrogation",
+        "Streetwise",
+        "Resist Torture/Drugs"
+      ]
+    },
+    {
+      "key": "ATTR",
+      "name": "Attractiveness",
+      "short": "Looks and first impressions.",
+      "usedFor": [
+        "Personal Grooming",
+        "Wardrobe & Style"
+      ]
+    },
+    {
+      "key": "LUCK",
+      "name": "Luck",
+      "short": "A pool of points per session you can add to important rolls; refills each session.",
+      "usedFor": [
+        "Bonus to any roll"
+      ]
+    },
+    {
+      "key": "MA",
+      "name": "Movement Allowance",
+      "short": "How fast you move.",
+      "usedFor": [
+        "Run",
+        "Leap"
+      ]
+    },
+    {
+      "key": "BODY",
+      "name": "Body Type",
+      "short": "Strength, toughness and endurance.",
+      "usedFor": [
+        "Save",
+        "BTM",
+        "BDM",
+        "Lift",
+        "Endurance",
+        "Swimming"
+      ]
+    },
+    {
+      "key": "EMP",
+      "name": "Empathy",
+      "short": "Understanding and connecting with people. Tied to Humanity.",
+      "usedFor": [
+        "Persuasion",
+        "Leadership",
+        "Human Perception",
+        "Humanity"
+      ]
+    }
+  ],
+  "derived": [
+    {
+      "key": "run",
+      "name": "Run",
+      "formula": "MA * 3",
+      "unit": "m"
+    },
+    {
+      "key": "leap",
+      "name": "Leap",
+      "formula": "run / 4",
+      "unit": "m"
+    },
+    {
+      "key": "lift",
+      "name": "Lift",
+      "formula": "BODY * 40",
+      "unit": "kg"
+    },
+    {
+      "key": "humanity",
+      "name": "Humanity",
+      "formula": "EMP * 10"
+    },
+    {
+      "key": "save",
+      "name": "Save",
+      "formula": "BODY"
+    },
+    {
+      "key": "btm",
+      "name": "Body Type Modifier",
+      "table": [
+        {
+          "min": 2,
+          "max": 2,
+          "value": 0,
+          "label": "Very weak"
+        },
+        {
+          "min": 3,
+          "max": 4,
+          "value": -1,
+          "label": "Weak"
+        },
+        {
+          "min": 5,
+          "max": 7,
+          "value": -2,
+          "label": "Average"
+        },
+        {
+          "min": 8,
+          "max": 9,
+          "value": -3,
+          "label": "Strong"
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": -4,
+          "label": "Very strong"
+        }
+      ]
+    },
+    {
+      "key": "bdm",
+      "name": "Body Damage Modifier",
+      "table": [
+        {
+          "min": 2,
+          "max": 2,
+          "value": -2
+        },
+        {
+          "min": 3,
+          "max": 4,
+          "value": -1
+        },
+        {
+          "min": 5,
+          "max": 7,
+          "value": 0
+        },
+        {
+          "min": 8,
+          "max": 9,
+          "value": 1
+        },
+        {
+          "min": 10,
+          "max": 10,
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "difficulty": [
+    {
+      "name": "Easy",
+      "value": 10
+    },
+    {
+      "name": "Average",
+      "value": 15
+    },
+    {
+      "name": "Difficult",
+      "value": 20
+    },
+    {
+      "name": "Very Difficult",
+      "value": 25
+    },
+    {
+      "name": "Nearly Impossible",
+      "value": 30
+    }
+  ]
+}

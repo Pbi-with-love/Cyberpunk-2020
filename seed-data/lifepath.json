@@ -1,0 +1,1273 @@
+{
+  "version": 1,
+  "dice": "1d10",
+  "sections": [
+    {
+      "id": "style",
+      "name": "Style",
+      "tables": [
+        {
+          "id": "clothes",
+          "name": "Clothes",
+          "entries": [
+            {
+              "roll": 1,
+              "text": "Torn-up street gear and patched denim"
+            },
+            {
+              "roll": 2,
+              "text": "Sleek corporate suits"
+            },
+            {
+              "roll": 3,
+              "text": "Military surplus and cargo pockets"
+            },
+            {
+              "roll": 4,
+              "text": "Glowing smart-fabric that shifts color"
+            },
+            {
+              "roll": 5,
+              "text": "Leather, chains and band patches"
+            },
+            {
+              "roll": 6,
+              "text": "Loose, layered streetwear"
+            },
+            {
+              "roll": 7,
+              "text": "Vintage 20th-century thrift finds"
+            },
+            {
+              "roll": 8,
+              "text": "Armored jacket over everything"
+            },
+            {
+              "roll": 9,
+              "text": "Minimal monochrome designer pieces"
+            },
+            {
+              "roll": 10,
+              "text": "Whatever was clean that morning"
+            }
+          ]
+        },
+        {
+          "id": "hair",
+          "name": "Hairstyle",
+          "entries": [
+            {
+              "roll": 1,
+              "text": "Shaved clean"
+            },
+            {
+              "roll": 2,
+              "text": "Neon-dyed mohawk"
+            },
+            {
+              "roll": 3,
+              "text": "Long and wild"
+            },
+            {
+              "roll": 4,
+              "text": "Short and military"
+            },
+            {
+              "roll": 5,
+              "text": "Slicked back"
+            },
+            {
+              "roll": 6,
+              "text": "Braids with data-bead charms"
+            },
+            {
+              "roll": 7,
+              "text": "Asymmetric undercut"
+            },
+            {
+              "roll": 8,
+              "text": "Chrome-plated scalp"
+            },
+            {
+              "roll": 9,
+              "text": "Messy and unwashed"
+            },
+            {
+              "roll": 10,
+              "text": "Perfect salon styling"
+            }
+          ]
+        },
+        {
+          "id": "affectation",
+          "name": "Affectation",
+          "entries": [
+            {
+              "roll": 1,
+              "text": "Mirrorshades, day and night"
+            },
+            {
+              "roll": 2,
+              "text": "Tattoos that crawl across the skin"
+            },
+            {
+              "roll": 3,
+              "text": "Always chewing something"
+            },
+            {
+              "roll": 4,
+              "text": "A visible, unhidden cyberlimb"
+            },
+            {
+              "roll": 5,
+              "text": "Speaks very quietly"
+            },
+            {
+              "roll": 6,
+              "text": "Cracks knuckles constantly"
+            },
+            {
+              "roll": 7,
+              "text": "Wears a single strange earring"
+            },
+            {
+              "roll": 8,
+              "text": "Never takes off gloves"
+            },
+            {
+              "roll": 9,
+              "text": "Hums old songs"
+            },
+            {
+              "roll": 10,
+              "text": "Glowing subdermal lights"
+            }
+          ]
+        },
+        {
+          "id": "origin",
+          "name": "Cultural origin",
+          "entries": [
+            {
+              "roll": 1,
+              "text": "North American"
+            },
+            {
+              "roll": 2,
+              "text": "South American"
+            },
+            {
+              "roll": 3,
+              "text": "Western European"
+            },
+            {
+              "roll": 4,
+              "text": "Eastern European"
+            },
+            {
+              "roll": 5,
+              "text": "Middle Eastern / North African"
+            },
+            {
+              "roll": 6,
+              "text": "Sub-Saharan African"
+            },
+            {
+              "roll": 7,
+              "text": "East Asian"
+            },
+            {
+              "roll": 8,
+              "text": "South Asian"
+            },
+            {
+              "roll": 9,
+              "text": "Southeast Asian"
+            },
+            {
+              "roll": 10,
+              "text": "Pacific Islander / Oceanian"
+            }
+          ]
+        },
+        {
+          "id": "language",
+          "name": "Language",
+          "derivedFrom": "origin",
+          "note": "Suggest a first language from the origin; the user may override.",
+          "byOrigin": {
+            "1": [
+              "English",
+              "Spanish",
+              "French"
+            ],
+            "2": [
+              "Spanish",
+              "Portuguese"
+            ],
+            "3": [
+              "English",
+              "French",
+              "German",
+              "Italian",
+              "Spanish"
+            ],
+            "4": [
+              "Russian",
+              "Polish",
+              "Ukrainian",
+              "Czech"
+            ],
+            "5": [
+              "Arabic",
+              "Farsi",
+              "Turkish",
+              "Hebrew"
+            ],
+            "6": [
+              "Swahili",
+              "Yoruba",
+              "Zulu",
+              "Amharic"
+            ],
+            "7": [
+              "Mandarin",
+              "Cantonese",
+              "Japanese",
+              "Korean"
+            ],
+            "8": [
+              "Hindi",
+              "Bengali",
+              "Tamil",
+              "Urdu"
+            ],
+            "9": [
+              "Vietnamese",
+              "Thai",
+              "Tagalog",
+              "Indonesian"
+            ],
+            "10": [
+              "English",
+              "Maori",
+              "Samoan"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "family",
+      "name": "Family",
+      "tables": [
+        {
+          "id": "ranking",
+          "name": "Family background",
+          "entries": [
+            {
+              "roll": 1,
+              "text": "Corporate executives"
+            },
+            {
+              "roll": 2,
+              "text": "Corporate middle managers"
+            },
+            {
+              "roll": 3,
+              "text": "Corporate office workers"
+            },
+            {
+              "roll": 4,
+              "text": "Nomad pack members"
+            },
+            {
+              "roll": 5,
+              "text": "Gang family"
+            },
+            {
+              "roll": 6,
+              "text": "Combat zone squatters"
+            },
+            {
+              "roll": 7,
+              "text": "Urban homeless"
+            },
+            {
+              "roll": 8,
+              "text": "Arcology residents"
+            },
+            {
+              "roll": 9,
+              "text": "Farmers in the outlands"
+            },
+            {
+              "roll": 10,
+              "text": "Wealthy old-money aristocrats"
+            }
+          ]
+        },
+        {
+          "id": "parents",
+          "name": "Parents",
+          "dice": "1d10",
+          "ranges": [
+            {
+              "min": 1,
+              "max": 6,
+              "text": "Both parents are alive"
+            },
+            {
+              "min": 7,
+              "max": 10,
+              "text": "Something happened to one or both parents",
+              "next": "parentFate"
+            }
+          ]
+        },
+        {
+          "id": "parentFate",
+          "name": "What happened to your parents",
+          "entries": [
+            {
+              "roll": 1,
+              "text": "Died in a corporate war"
+            },
+            {
+              "roll": 2,
+              "text": "Killed in a street accident"
+            },
+            {
+              "roll": 3,
+              "text": "Murdered"
+            },
+            {
+              "roll": 4,
+              "text": "Lost their memory and never came back"
+            },
+            {
+              "roll": 5,
+              "text": "Never knew them"
+            },
+            {
+              "roll": 6,
+              "text": "In hiding to protect you"
+            },
+            {
+              "roll": 7,
+              "text": "Left you with relatives"
+            },
+            {
+              "roll": 8,
+              "text": "Grew up on the street after they vanished"
+            },
+            {
+              "roll": 9,
+              "text": "Gave you up for adoption"
+            },
+            {
+              "roll": 10,
+              "text": "Sold you for money"
+            }
+          ]
+        },
+        {
+          "id": "familyStatus",
+          "name": "Family status",
+          "dice": "1d10",
+          "ranges": [
+            {
+              "min": 1,
+              "max": 6,
+              "text": "Your family is in danger",
+              "next": "familyTragedy"
+            },
+            {
+              "min": 7,
+              "max": 10,
+              "text": "Your family is doing fine"
+            }
+          ]
+        },
+        {
+          "id": "familyTragedy",
+          "name": "Family tragedy",
+          "entries": [
+            {
+              "roll": 1,
+              "text": "Lost everything through betrayal"
+            },
+            {
+              "roll": 2,
+              "text": "Lost everything through bad management"
+            },
+            {
+              "roll": 3,
+              "text": "Exiled or driven out of their home"
+            },
+            {
+              "roll": 4,
+              "text": "Imprisoned, and you alone escaped"
+            },
+            {
+              "roll": 5,
+              "text": "Vanished; you are the last one left"
+            },
+            {
+              "roll": 6,
+              "text": "Murdered, and you saw it happen"
+            },
+            {
+              "roll": 7,
+              "text": "Caught up in a long-running conspiracy"
+            },
+            {
+              "roll": 8,
+              "text": "Scattered by misfortune"
+            },
+            {
+              "roll": 9,
+              "text": "Cursed by a hereditary feud"
+            },
+            {
+              "roll": 10,
+              "text": "You inherited a big debt"
+            }
+          ]
+        },
+        {
+          "id": "childhood",
+          "name": "Childhood environment",
+          "entries": [
+            {
+              "roll": 1,
+              "text": "Spent on the street with no adult supervision"
+            },
+            {
+              "roll": 2,
+              "text": "In a safe corporate suburb"
+            },
+            {
+              "roll": 3,
+              "text": "Moving from town to town in a nomad pack"
+            },
+            {
+              "roll": 4,
+              "text": "In a decaying, once-upscale neighborhood"
+            },
+            {
+              "roll": 5,
+              "text": "Defending a home in the combat zone"
+            },
+            {
+              "roll": 6,
+              "text": "In a huge arcology tower"
+            },
+            {
+              "roll": 7,
+              "text": "In a ruined, bombed-out city"
+            },
+            {
+              "roll": 8,
+              "text": "In a small farming town"
+            },
+            {
+              "roll": 9,
+              "text": "In a big city full of chances and danger"
+            },
+            {
+              "roll": 10,
+              "text": "In an orbital habitat"
+            }
+          ]
+        },
+        {
+          "id": "siblings",
+          "name": "Siblings",
+          "dice": "1d10",
+          "rule": "1-7 = that many siblings; 8-10 = only child",
+          "sibling": {
+            "gender": {
+              "dice": "1d10",
+              "ranges": [
+                {
+                  "min": 1,
+                  "max": 5,
+                  "text": "Male"
+                },
+                {
+                  "min": 6,
+                  "max": 10,
+                  "text": "Female"
+                }
+              ]
+            },
+            "age": {
+              "dice": "1d10",
+              "ranges": [
+                {
+                  "min": 1,
+                  "max": 5,
+                  "text": "Older"
+                },
+                {
+                  "min": 6,
+                  "max": 9,
+                  "text": "Younger"
+                },
+                {
+                  "min": 10,
+                  "max": 10,
+                  "text": "Twin"
+                }
+              ]
+            },
+            "feeling": {
+              "dice": "1d10",
+              "ranges": [
+                {
+                  "min": 1,
+                  "max": 2,
+                  "text": "Dislikes you"
+                },
+                {
+                  "min": 3,
+                  "max": 4,
+                  "text": "Likes you"
+                },
+                {
+                  "min": 5,
+                  "max": 6,
+                  "text": "Neutral"
+                },
+                {
+                  "min": 7,
+                  "max": 8,
+                  "text": "Hero-worships you"
+                },
+                {
+                  "min": 9,
+                  "max": 10,
+                  "text": "Hates you"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "motivations",
+      "name": "Motivations",
+      "tables": [
+        {
+          "id": "personality",
+          "name": "Personality",
+          "entries": [
+            {
+              "roll": 1,
+              "text": "Shy and secretive"
+            },
+            {
+              "roll": 2,
+              "text": "Rebellious and antisocial"
+            },
+            {
+              "roll": 3,
+              "text": "Arrogant and proud"
+            },
+            {
+              "roll": 4,
+              "text": "Moody and impulsive"
+            },
+            {
+              "roll": 5,
+              "text": "Picky and nervous"
+            },
+            {
+              "roll": 6,
+              "text": "Stable and serious"
+            },
+            {
+              "roll": 7,
+              "text": "Silly and scatterbrained"
+            },
+            {
+              "roll": 8,
+              "text": "Sneaky and deceptive"
+            },
+            {
+              "roll": 9,
+              "text": "Intellectual and detached"
+            },
+            {
+              "roll": 10,
+              "text": "Friendly and outgoing"
+            }
+          ]
+        },
+        {
+          "id": "valuedPerson",
+          "name": "Person you value most",
+          "entries": [
+            {
+              "roll": 1,
+              "text": "A parent"
+            },
+            {
+              "roll": 2,
+              "text": "A brother or sister"
+            },
+            {
+              "roll": 3,
+              "text": "A lover"
+            },
+            {
+              "roll": 4,
+              "text": "A friend"
+            },
+            {
+              "roll": 5,
+              "text": "Yourself"
+            },
+            {
+              "roll": 6,
+              "text": "A pet"
+            },
+            {
+              "roll": 7,
+              "text": "A teacher or mentor"
+            },
+            {
+              "roll": 8,
+              "text": "A public figure"
+            },
+            {
+              "roll": 9,
+              "text": "A personal hero"
+            },
+            {
+              "roll": 10,
+              "text": "No one"
+            }
+          ]
+        },
+        {
+          "id": "valueMost",
+          "name": "What you value most",
+          "entries": [
+            {
+              "roll": 1,
+              "text": "Money"
+            },
+            {
+              "roll": 2,
+              "text": "Honor"
+            },
+            {
+              "roll": 3,
+              "text": "Your word"
+            },
+            {
+              "roll": 4,
+              "text": "Honesty"
+            },
+            {
+              "roll": 5,
+              "text": "Knowledge"
+            },
+            {
+              "roll": 6,
+              "text": "Vengeance"
+            },
+            {
+              "roll": 7,
+              "text": "Love"
+            },
+            {
+              "roll": 8,
+              "text": "Power"
+            },
+            {
+              "roll": 9,
+              "text": "Having a good time"
+            },
+            {
+              "roll": 10,
+              "text": "Friendship"
+            }
+          ]
+        },
+        {
+          "id": "feelAboutPeople",
+          "name": "How you feel about people",
+          "entries": [
+            {
+              "roll": 1,
+              "text": "Neutral"
+            },
+            {
+              "roll": 2,
+              "text": "Neutral"
+            },
+            {
+              "roll": 3,
+              "text": "Everyone is valuable"
+            },
+            {
+              "roll": 4,
+              "text": "People are tools to be used"
+            },
+            {
+              "roll": 5,
+              "text": "Every life is sacred"
+            },
+            {
+              "roll": 6,
+              "text": "People are obstacles to remove"
+            },
+            {
+              "roll": 7,
+              "text": "People are untrustworthy"
+            },
+            {
+              "roll": 8,
+              "text": "Wipe them all out"
+            },
+            {
+              "roll": 9,
+              "text": "People are wonderful"
+            },
+            {
+              "roll": 10,
+              "text": "People are wonderful"
+            }
+          ]
+        },
+        {
+          "id": "valuedPossession",
+          "name": "Most valued possession",
+          "entries": [
+            {
+              "roll": 1,
+              "text": "A weapon"
+            },
+            {
+              "roll": 2,
+              "text": "A tool"
+            },
+            {
+              "roll": 3,
+              "text": "A piece of clothing"
+            },
+            {
+              "roll": 4,
+              "text": "A photograph"
+            },
+            {
+              "roll": 5,
+              "text": "A book or diary"
+            },
+            {
+              "roll": 6,
+              "text": "A recording"
+            },
+            {
+              "roll": 7,
+              "text": "A musical instrument"
+            },
+            {
+              "roll": 8,
+              "text": "A piece of jewelry"
+            },
+            {
+              "roll": 9,
+              "text": "A toy"
+            },
+            {
+              "roll": 10,
+              "text": "A letter"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lifeEvents",
+      "name": "Life events",
+      "rule": "One event per year from age 16 to the character's current age.",
+      "eventType": {
+        "dice": "1d10",
+        "ranges": [
+          {
+            "min": 1,
+            "max": 3,
+            "text": "Big problems, big wins",
+            "next": "problemsOrWins"
+          },
+          {
+            "min": 4,
+            "max": 6,
+            "text": "Friends and enemies",
+            "next": "friendsOrEnemies"
+          },
+          {
+            "min": 7,
+            "max": 8,
+            "text": "Romantic involvement",
+            "next": "romance"
+          },
+          {
+            "min": 9,
+            "max": 10,
+            "text": "Nothing happened that year"
+          }
+        ]
+      },
+      "tables": [
+        {
+          "id": "problemsOrWins",
+          "name": "Problem or win",
+          "dice": "1d10",
+          "ranges": [
+            {
+              "min": 1,
+              "max": 5,
+              "text": "Big problem",
+              "next": "bigProblem"
+            },
+            {
+              "min": 6,
+              "max": 10,
+              "text": "Big win",
+              "next": "bigWin"
+            }
+          ],
+          "note": "Even/odd split also works; pick one rule and keep it."
+        },
+        {
+          "id": "bigProblem",
+          "name": "Big problem",
+          "entries": [
+            {
+              "roll": 1,
+              "text": "Lost a large amount of money"
+            },
+            {
+              "roll": 2,
+              "text": "Framed for something you didn't do"
+            },
+            {
+              "roll": 3,
+              "text": "Hunted by a corporation"
+            },
+            {
+              "roll": 4,
+              "text": "Betrayed by someone close"
+            },
+            {
+              "roll": 5,
+              "text": "Badly injured and still carry the scars"
+            },
+            {
+              "roll": 6,
+              "text": "Hooked on a drug for a while"
+            },
+            {
+              "roll": 7,
+              "text": "Lost your job or position"
+            },
+            {
+              "roll": 8,
+              "text": "A close friend or lover died"
+            },
+            {
+              "roll": 9,
+              "text": "Lost your memory of that year"
+            },
+            {
+              "roll": 10,
+              "text": "Spent time in prison"
+            }
+          ]
+        },
+        {
+          "id": "bigWin",
+          "name": "Big win",
+          "entries": [
+            {
+              "roll": 1,
+              "text": "Made a powerful connection"
+            },
+            {
+              "roll": 2,
+              "text": "Found a large sum of money"
+            },
+            {
+              "roll": 3,
+              "text": "Landed a big deal"
+            },
+            {
+              "roll": 4,
+              "text": "Found a mentor who taught you"
+            },
+            {
+              "roll": 5,
+              "text": "Earned a favor from a corporate insider"
+            },
+            {
+              "roll": 6,
+              "text": "Became friends with a cop"
+            },
+            {
+              "roll": 7,
+              "text": "Became friends with a nomad pack"
+            },
+            {
+              "roll": 8,
+              "text": "Gained a local reputation"
+            },
+            {
+              "roll": 9,
+              "text": "Found a rare piece of tech"
+            },
+            {
+              "roll": 10,
+              "text": "Saved someone important"
+            }
+          ]
+        },
+        {
+          "id": "friendsOrEnemies",
+          "name": "Friend or enemy",
+          "dice": "1d10",
+          "ranges": [
+            {
+              "min": 1,
+              "max": 5,
+              "text": "Made a friend",
+              "next": "friend"
+            },
+            {
+              "min": 6,
+              "max": 10,
+              "text": "Made an enemy",
+              "next": "enemy"
+            }
+          ]
+        },
+        {
+          "id": "friend",
+          "name": "Friend",
+          "entries": [
+            {
+              "roll": 1,
+              "text": "Like a sibling to you"
+            },
+            {
+              "roll": 2,
+              "text": "Like a big brother or sister"
+            },
+            {
+              "roll": 3,
+              "text": "A teacher figure"
+            },
+            {
+              "roll": 4,
+              "text": "A partner or coworker"
+            },
+            {
+              "roll": 5,
+              "text": "An old lover"
+            },
+            {
+              "roll": 6,
+              "text": "An old enemy who came around"
+            },
+            {
+              "roll": 7,
+              "text": "Like a parent to you"
+            },
+            {
+              "roll": 8,
+              "text": "Someone you know from childhood"
+            },
+            {
+              "roll": 9,
+              "text": "Someone you met online"
+            },
+            {
+              "roll": 10,
+              "text": "Someone with shared interests"
+            }
+          ]
+        },
+        {
+          "id": "enemy",
+          "name": "Enemy",
+          "subTables": [
+            {
+              "id": "who",
+              "name": "Who",
+              "entries": [
+                {
+                  "roll": 1,
+                  "text": "An ex-friend"
+                },
+                {
+                  "roll": 2,
+                  "text": "An ex-lover"
+                },
+                {
+                  "roll": 3,
+                  "text": "A relative"
+                },
+                {
+                  "roll": 4,
+                  "text": "A childhood rival"
+                },
+                {
+                  "roll": 5,
+                  "text": "A corporate executive"
+                },
+                {
+                  "roll": 6,
+                  "text": "A gang boss"
+                },
+                {
+                  "roll": 7,
+                  "text": "A cop"
+                },
+                {
+                  "roll": 8,
+                  "text": "A booster gang"
+                },
+                {
+                  "roll": 9,
+                  "text": "A rival in your role"
+                },
+                {
+                  "roll": 10,
+                  "text": "A former partner"
+                }
+              ]
+            },
+            {
+              "id": "cause",
+              "name": "Cause",
+              "entries": [
+                {
+                  "roll": 1,
+                  "text": "Caused the other to lose face"
+                },
+                {
+                  "roll": 2,
+                  "text": "Caused a loss of a lover or friend"
+                },
+                {
+                  "roll": 3,
+                  "text": "Caused a big humiliation"
+                },
+                {
+                  "roll": 4,
+                  "text": "Accused the other of cowardice"
+                },
+                {
+                  "roll": 5,
+                  "text": "Left the other for dead"
+                },
+                {
+                  "roll": 6,
+                  "text": "Turned down an offer of work"
+                },
+                {
+                  "roll": 7,
+                  "text": "Insulted them publicly"
+                },
+                {
+                  "roll": 8,
+                  "text": "Romantic rivalry"
+                },
+                {
+                  "roll": 9,
+                  "text": "Foiled a plan of theirs"
+                },
+                {
+                  "roll": 10,
+                  "text": "Stole something from them"
+                }
+              ]
+            },
+            {
+              "id": "response",
+              "name": "What they will do",
+              "entries": [
+                {
+                  "roll": 1,
+                  "text": "Avoid you"
+                },
+                {
+                  "roll": 2,
+                  "text": "Avoid you"
+                },
+                {
+                  "roll": 3,
+                  "text": "Go into a murderous rage on sight"
+                },
+                {
+                  "roll": 4,
+                  "text": "Go into a murderous rage on sight"
+                },
+                {
+                  "roll": 5,
+                  "text": "Backstab you indirectly"
+                },
+                {
+                  "roll": 6,
+                  "text": "Backstab you indirectly"
+                },
+                {
+                  "roll": 7,
+                  "text": "Verbally attack you"
+                },
+                {
+                  "roll": 8,
+                  "text": "Verbally attack you"
+                },
+                {
+                  "roll": 9,
+                  "text": "Set you up for a fall"
+                },
+                {
+                  "roll": 10,
+                  "text": "Hunt you down"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "romance",
+          "name": "Romance",
+          "dice": "1d10",
+          "ranges": [
+            {
+              "min": 1,
+              "max": 4,
+              "text": "Happy love affair"
+            },
+            {
+              "min": 5,
+              "max": 5,
+              "text": "Love affair ended in tragedy",
+              "next": "tragicLove"
+            },
+            {
+              "min": 6,
+              "max": 7,
+              "text": "Love affair with problems",
+              "next": "problemLove"
+            },
+            {
+              "min": 8,
+              "max": 10,
+              "text": "Quick affairs and hot dates"
+            }
+          ]
+        },
+        {
+          "id": "tragicLove",
+          "name": "Tragic ending",
+          "entries": [
+            {
+              "roll": 1,
+              "text": "Your lover died in an accident"
+            },
+            {
+              "roll": 2,
+              "text": "Your lover vanished without a trace"
+            },
+            {
+              "roll": 3,
+              "text": "It just didn't work out"
+            },
+            {
+              "roll": 4,
+              "text": "A personal goal or vendetta came between you"
+            },
+            {
+              "roll": 5,
+              "text": "Your lover was imprisoned or exiled"
+            },
+            {
+              "roll": 6,
+              "text": "Your lover was kidnapped"
+            },
+            {
+              "roll": 7,
+              "text": "Your lover went insane or cyberpsycho"
+            },
+            {
+              "roll": 8,
+              "text": "Your lover committed suicide"
+            },
+            {
+              "roll": 9,
+              "text": "Your lover was murdered by an enemy"
+            },
+            {
+              "roll": 10,
+              "text": "Your lover is now your rival"
+            }
+          ]
+        },
+        {
+          "id": "problemLove",
+          "name": "Problem",
+          "entries": [
+            {
+              "roll": 1,
+              "text": "Your lover's family hates you"
+            },
+            {
+              "roll": 2,
+              "text": "Your lover's friends hate you"
+            },
+            {
+              "roll": 3,
+              "text": "You fight all the time"
+            },
+            {
+              "roll": 4,
+              "text": "You are on opposite sides of a war"
+            },
+            {
+              "roll": 5,
+              "text": "Your lover is jealous"
+            },
+            {
+              "roll": 6,
+              "text": "Your lover is the jealous kind and dangerous"
+            },
+            {
+              "roll": 7,
+              "text": "You have conflicting backgrounds"
+            },
+            {
+              "roll": 8,
+              "text": "Your lover has a past they won't talk about"
+            },
+            {
+              "roll": 9,
+              "text": "Your lover is involved with someone else"
+            },
+            {
+              "roll": 10,
+              "text": "Your lover is a criminal"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

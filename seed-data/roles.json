@@ -1,0 +1,259 @@
+{
+  "version": 1,
+  "careerPoints": 40,
+  "pickupPointsFormula": "INT + REF",
+  "roles": [
+    {
+      "id": "solo",
+      "name": "Solo",
+      "tagline": "Hired gun",
+      "description": "A professional fighter: bodyguard, mercenary or assassin who sells combat skill to the highest bidder.",
+      "specialAbility": "combat_sense",
+      "careerSkills": [
+        "combat_sense",
+        "awareness_notice",
+        "handgun",
+        "melee",
+        "weaponsmith",
+        "rifle",
+        "athletics",
+        "submachinegun",
+        "stealth"
+      ],
+      "careerChoices": [
+        {
+          "pick": 1,
+          "from": [
+            "brawling",
+            "martial_arts"
+          ]
+        }
+      ],
+      "priorityStats": [
+        "REF",
+        "BODY",
+        "COOL"
+      ]
+    },
+    {
+      "id": "rocker",
+      "name": "Rockerboy",
+      "tagline": "Rebel musician",
+      "description": "A performer who uses music and fame to stir up crowds and fight the system.",
+      "specialAbility": "charismatic_leadership",
+      "careerSkills": [
+        "charismatic_leadership",
+        "awareness_notice",
+        "perform",
+        "wardrobe_style",
+        "composition",
+        "brawling",
+        "play_instrument",
+        "streetwise",
+        "persuasion",
+        "seduction"
+      ],
+      "priorityStats": [
+        "COOL",
+        "EMP",
+        "ATTR"
+      ]
+    },
+    {
+      "id": "netrunner",
+      "name": "Netrunner",
+      "tagline": "Hacker",
+      "description": "A hacker who jacks straight into the Net to steal data, crack systems and fight other runners.",
+      "specialAbility": "interface",
+      "careerSkills": [
+        "interface",
+        "awareness_notice",
+        "basic_tech",
+        "education",
+        "system_knowledge",
+        "cybertech",
+        "cyberdeck_design",
+        "composition",
+        "electronics",
+        "programming"
+      ],
+      "priorityStats": [
+        "INT",
+        "TECH",
+        "REF"
+      ]
+    },
+    {
+      "id": "media",
+      "name": "Media",
+      "tagline": "Journalist",
+      "description": "A reporter who digs up the truth and gets it out to the public, whatever the corporations want.",
+      "specialAbility": "credibility",
+      "careerSkills": [
+        "credibility",
+        "awareness_notice",
+        "composition",
+        "education",
+        "persuasion",
+        "human_perception",
+        "social",
+        "streetwise",
+        "photo_film",
+        "interview"
+      ],
+      "priorityStats": [
+        "INT",
+        "EMP",
+        "COOL"
+      ]
+    },
+    {
+      "id": "nomad",
+      "name": "Nomad",
+      "tagline": "Road warrior",
+      "description": "A member of a roaming clan living on the highways, loyal to family above all.",
+      "specialAbility": "family",
+      "careerSkills": [
+        "family",
+        "awareness_notice",
+        "endurance",
+        "melee",
+        "rifle",
+        "driving",
+        "basic_tech",
+        "wilderness_survival",
+        "brawling",
+        "athletics"
+      ],
+      "priorityStats": [
+        "REF",
+        "BODY",
+        "TECH"
+      ]
+    },
+    {
+      "id": "fixer",
+      "name": "Fixer",
+      "tagline": "Dealmaker",
+      "description": "A street broker who can get anything or anyone, for a price.",
+      "specialAbility": "streetdeal",
+      "careerSkills": [
+        "streetdeal",
+        "awareness_notice",
+        "forgery",
+        "handgun",
+        "brawling",
+        "melee",
+        "pick_lock",
+        "pick_pocket",
+        "intimidate",
+        "persuasion"
+      ],
+      "priorityStats": [
+        "COOL",
+        "INT",
+        "EMP"
+      ]
+    },
+    {
+      "id": "cop",
+      "name": "Cop",
+      "tagline": "Law on the street",
+      "description": "An officer trying to keep some order in a city that has mostly given up on it.",
+      "specialAbility": "authority",
+      "careerSkills": [
+        "authority",
+        "awareness_notice",
+        "handgun",
+        "human_perception",
+        "athletics",
+        "education",
+        "brawling",
+        "melee",
+        "interrogation",
+        "streetwise"
+      ],
+      "priorityStats": [
+        "REF",
+        "COOL",
+        "INT"
+      ]
+    },
+    {
+      "id": "corporate",
+      "name": "Corporate",
+      "tagline": "Executive",
+      "description": "A company climber with access to money and power, playing a ruthless game of office politics.",
+      "specialAbility": "resources",
+      "careerSkills": [
+        "resources",
+        "awareness_notice",
+        "human_perception",
+        "education",
+        "library_search",
+        "social",
+        "persuasion",
+        "stock_market",
+        "wardrobe_style",
+        "personal_grooming"
+      ],
+      "priorityStats": [
+        "INT",
+        "COOL",
+        "ATTR"
+      ]
+    },
+    {
+      "id": "techie",
+      "name": "Techie",
+      "tagline": "Fixer of machines",
+      "description": "A mechanic and inventor who can build, repair or improvise almost any device.",
+      "specialAbility": "jury_rig",
+      "careerSkills": [
+        "jury_rig",
+        "awareness_notice",
+        "basic_tech",
+        "cybertech",
+        "teaching",
+        "education",
+        "electronics"
+      ],
+      "careerFreePicks": [
+        {
+          "count": 3,
+          "stat": "TECH"
+        }
+      ],
+      "priorityStats": [
+        "TECH",
+        "INT"
+      ],
+      "verify": true
+    },
+    {
+      "id": "medtechie",
+      "name": "Medtechie",
+      "tagline": "Street doctor",
+      "description": "A medic who patches up the wounded and installs cyberware, licensed or not.",
+      "specialAbility": "medical_tech",
+      "careerSkills": [
+        "medical_tech",
+        "awareness_notice",
+        "basic_tech",
+        "diagnose_illness",
+        "education",
+        "cryotank_operation",
+        "library_search",
+        "pharmaceuticals",
+        "zoology",
+        "human_perception"
+      ],
+      "priorityStats": [
+        "TECH",
+        "INT",
+        "EMP"
+      ],
+      "verify": true
+    }
+  ]
+}

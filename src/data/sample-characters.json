@@ -1,0 +1,1225 @@
+[
+  {
+    "version": 1,
+    "identity": {
+      "handle": "Razor",
+      "realName": "Kira Sato",
+      "roleId": "solo",
+      "age": 23,
+      "gender": "Female",
+      "reputation": 2
+    },
+    "stats": {
+      "method": "random",
+      "points": 47,
+      "values": {
+        "INT": 5,
+        "REF": 10,
+        "TECH": 3,
+        "COOL": 8,
+        "ATTR": 4,
+        "LUCK": 3,
+        "MA": 3,
+        "BODY": 6,
+        "EMP": 5
+      }
+    },
+    "skills": {
+      "career": {
+        "combat_sense": 7,
+        "awareness_notice": 5,
+        "handgun": 3,
+        "melee": 3,
+        "weaponsmith": 3,
+        "rifle": 4,
+        "athletics": 6,
+        "submachinegun": 4,
+        "stealth": 3,
+        "martial_arts": 2
+      },
+      "pickup": {
+        "gamble": 2,
+        "persuasion": 1,
+        "wilderness_survival": 2,
+        "paint_draw": 1,
+        "endurance": 1,
+        "heavy_machinery": 2,
+        "pilot_fixed_wing": 1,
+        "pilot_dirigible": 1,
+        "mathematics": 2,
+        "resist_torture_drugs": 2
+      },
+      "details": {
+        "martial_arts": "Aikido"
+      },
+      "careerChoices": [
+        "martial_arts"
+      ],
+      "careerFreePicks": []
+    },
+    "lifepath": {
+      "style": {
+        "clothes": "Sleek corporate suits",
+        "hair": "Slicked back",
+        "affectation": "Wears a single strange earring",
+        "origin": "East Asian",
+        "language": "Japanese"
+      },
+      "family": {
+        "ranking": "Corporate middle managers",
+        "parents": "Something happened to one or both parents: Never knew them",
+        "familyStatus": "Your family is doing fine",
+        "childhood": "Moving from town to town in a nomad pack",
+        "siblings": "5: Younger Male (Dislikes you); Older Male (Hero-worships you); Older Female (Hates you); Older Male (Hates you); Older Female (Dislikes you)"
+      },
+      "motivations": {
+        "personality": "Stable and serious",
+        "valuedPerson": "A brother or sister",
+        "valueMost": "Your word",
+        "feelAboutPeople": "People are untrustworthy",
+        "valuedPossession": "A musical instrument"
+      },
+      "events": [
+        "Made a friend: An old enemy who came around",
+        "Made a friend: Someone you met online",
+        "Big win: Landed a big deal",
+        "Nothing happened that year",
+        "Big problem: Hunted by a corporation",
+        "Happy love affair",
+        "Nothing happened that year"
+      ]
+    },
+    "gear": {
+      "startingMoney": 7000,
+      "items": [
+        {
+          "itemId": "assault_rifle"
+        },
+        {
+          "itemId": "heavy_pistol"
+        },
+        {
+          "itemId": "medium_armor_jacket"
+        },
+        {
+          "itemId": "neural_processor",
+          "humanityCostRolled": 5
+        },
+        {
+          "itemId": "reflex_booster",
+          "humanityCostRolled": 8
+        },
+        {
+          "itemId": "cyberoptic",
+          "humanityCostRolled": 6
+        },
+        {
+          "itemId": "low_light",
+          "humanityCostRolled": 1
+        },
+        {
+          "itemId": "skinweave",
+          "humanityCostRolled": 10
+        }
+      ]
+    },
+    "appearance": {
+      "skinTone": "tan",
+      "hairStyle": 5,
+      "hairColor": "red",
+      "clothesStyle": 2,
+      "clothesColor": "crimson"
+    }
+  },
+  {
+    "version": 1,
+    "identity": {
+      "handle": "Johnny Chrome",
+      "realName": "Dante Takahashi",
+      "roleId": "rocker",
+      "age": 24,
+      "gender": "Female",
+      "reputation": 1
+    },
+    "stats": {
+      "method": "random",
+      "points": 39,
+      "values": {
+        "INT": 2,
+        "REF": 5,
+        "TECH": 3,
+        "COOL": 8,
+        "ATTR": 7,
+        "LUCK": 2,
+        "MA": 2,
+        "BODY": 2,
+        "EMP": 8
+      }
+    },
+    "skills": {
+      "career": {
+        "charismatic_leadership": 7,
+        "awareness_notice": 2,
+        "perform": 8,
+        "wardrobe_style": 3,
+        "composition": 4,
+        "brawling": 3,
+        "play_instrument": 4,
+        "streetwise": 4,
+        "persuasion": 2,
+        "seduction": 3
+      },
+      "pickup": {
+        "swimming": 1,
+        "botany": 2,
+        "shadow_track": 1,
+        "composition": 1,
+        "awareness_notice": 1,
+        "pharmaceuticals": 1
+      },
+      "details": {
+        "play_instrument": "Electric Guitar"
+      },
+      "careerChoices": [],
+      "careerFreePicks": []
+    },
+    "lifepath": {
+      "style": {
+        "clothes": "Torn-up street gear and patched denim",
+        "hair": "Shaved clean",
+        "affectation": "Always chewing something",
+        "origin": "Sub-Saharan African",
+        "language": "Yoruba"
+      },
+      "family": {
+        "ranking": "Nomad pack members",
+        "parents": "Something happened to one or both parents: Sold you for money",
+        "familyStatus": "Your family is doing fine",
+        "childhood": "Defending a home in the combat zone",
+        "siblings": "1: Older Female (Neutral)"
+      },
+      "motivations": {
+        "personality": "Moody and impulsive",
+        "valuedPerson": "A brother or sister",
+        "valueMost": "Vengeance",
+        "feelAboutPeople": "Everyone is valuable",
+        "valuedPossession": "A musical instrument"
+      },
+      "events": [
+        "Made a friend: Someone you met online",
+        "Big win: Earned a favor from a corporate insider",
+        "Made an enemy — Who: A booster gang | Cause: Turned down an offer of work | What they will do: Verbally attack you",
+        "Happy love affair",
+        "Nothing happened that year",
+        "Quick affairs and hot dates",
+        "Big problem: Lost your job or position",
+        "Nothing happened that year"
+      ]
+    },
+    "gear": {
+      "startingMoney": 10000,
+      "items": [
+        {
+          "itemId": "medium_pistol"
+        },
+        {
+          "itemId": "knife"
+        },
+        {
+          "itemId": "light_armor_jacket"
+        },
+        {
+          "itemId": "cyberaudio",
+          "humanityCostRolled": 9
+        },
+        {
+          "itemId": "light_tattoo",
+          "humanityCostRolled": 1
+        },
+        {
+          "itemId": "cyberoptic",
+          "humanityCostRolled": 6
+        }
+      ]
+    },
+    "appearance": {
+      "skinTone": "pale",
+      "hairStyle": 1,
+      "hairColor": "black",
+      "clothesStyle": 1,
+      "clothesColor": "neon_pink"
+    }
+  },
+  {
+    "version": 1,
+    "identity": {
+      "handle": "Ghost_0x",
+      "realName": "Nadia Mercer",
+      "roleId": "netrunner",
+      "age": 22,
+      "gender": "Non-binary",
+      "reputation": 2
+    },
+    "stats": {
+      "method": "random",
+      "points": 56,
+      "values": {
+        "INT": 10,
+        "REF": 10,
+        "TECH": 10,
+        "COOL": 4,
+        "ATTR": 3,
+        "LUCK": 6,
+        "MA": 2,
+        "BODY": 3,
+        "EMP": 8
+      }
+    },
+    "skills": {
+      "career": {
+        "interface": 6,
+        "awareness_notice": 2,
+        "basic_tech": 2,
+        "education": 1,
+        "system_knowledge": 9,
+        "cybertech": 1,
+        "cyberdeck_design": 9,
+        "composition": 5,
+        "electronics": 2,
+        "programming": 3
+      },
+      "pickup": {
+        "pharmaceuticals": 1,
+        "oratory": 2,
+        "stock_market": 2,
+        "endurance": 2,
+        "photo_film": 1,
+        "dance": 1,
+        "paint_draw": 3,
+        "electronics": 1,
+        "electronic_security": 1,
+        "strength_feat": 2,
+        "dodge_escape": 2,
+        "pick_lock": 2
+      },
+      "details": {},
+      "careerChoices": [],
+      "careerFreePicks": []
+    },
+    "lifepath": {
+      "style": {
+        "clothes": "Armored jacket over everything",
+        "hair": "Messy and unwashed",
+        "affectation": "A visible, unhidden cyberlimb",
+        "origin": "Sub-Saharan African",
+        "language": "Swahili"
+      },
+      "family": {
+        "ranking": "Corporate executives",
+        "parents": "Both parents are alive",
+        "familyStatus": "Your family is in danger: Lost everything through betrayal",
+        "childhood": "Defending a home in the combat zone",
+        "siblings": "Only child"
+      },
+      "motivations": {
+        "personality": "Stable and serious",
+        "valuedPerson": "A brother or sister",
+        "valueMost": "Friendship",
+        "feelAboutPeople": "People are wonderful",
+        "valuedPossession": "A piece of jewelry"
+      },
+      "events": [
+        "Quick affairs and hot dates",
+        "Made a friend: Like a big brother or sister",
+        "Big problem: Hunted by a corporation",
+        "Big win: Saved someone important",
+        "Big problem: Hunted by a corporation",
+        "Nothing happened that year"
+      ]
+    },
+    "gear": {
+      "startingMoney": 5000,
+      "items": [
+        {
+          "itemId": "light_pistol"
+        },
+        {
+          "itemId": "medium_pistol"
+        },
+        {
+          "itemId": "kevlar_tshirt"
+        },
+        {
+          "itemId": "interface_plugs",
+          "humanityCostRolled": 6
+        },
+        {
+          "itemId": "neural_processor",
+          "humanityCostRolled": 6
+        },
+        {
+          "itemId": "cyberoptic",
+          "humanityCostRolled": 6
+        },
+        {
+          "itemId": "low_light",
+          "humanityCostRolled": 1
+        }
+      ]
+    },
+    "appearance": {
+      "skinTone": "olive",
+      "hairStyle": 9,
+      "hairColor": "copper",
+      "clothesStyle": 8,
+      "clothesColor": "cyber_cyan"
+    }
+  },
+  {
+    "version": 1,
+    "identity": {
+      "handle": "Vera Truth",
+      "realName": "Victor Kowalski",
+      "roleId": "media",
+      "age": 20,
+      "gender": "Female",
+      "reputation": 0
+    },
+    "stats": {
+      "method": "random",
+      "points": 55,
+      "values": {
+        "INT": 10,
+        "REF": 6,
+        "TECH": 2,
+        "COOL": 8,
+        "ATTR": 4,
+        "LUCK": 5,
+        "MA": 4,
+        "BODY": 6,
+        "EMP": 10
+      }
+    },
+    "skills": {
+      "career": {
+        "credibility": 9,
+        "awareness_notice": 5,
+        "composition": 0,
+        "education": 4,
+        "persuasion": 1,
+        "human_perception": 4,
+        "social": 5,
+        "streetwise": 5,
+        "photo_film": 5,
+        "interview": 2
+      },
+      "pickup": {
+        "dodge_escape": 1,
+        "strength_feat": 1,
+        "forgery": 1,
+        "stealth": 1,
+        "programming": 1,
+        "personal_grooming": 3,
+        "archery": 1,
+        "gamble": 2,
+        "system_knowledge": 3,
+        "athletics": 2
+      },
+      "details": {},
+      "careerChoices": [],
+      "careerFreePicks": []
+    },
+    "lifepath": {
+      "style": {
+        "clothes": "Armored jacket over everything",
+        "hair": "Short and military",
+        "affectation": "Mirrorshades, day and night",
+        "origin": "Sub-Saharan African",
+        "language": "Amharic"
+      },
+      "family": {
+        "ranking": "Wealthy old-money aristocrats",
+        "parents": "Both parents are alive",
+        "familyStatus": "Your family is in danger: Scattered by misfortune",
+        "childhood": "In a ruined, bombed-out city",
+        "siblings": "6: Younger Male (Dislikes you); Younger Female (Hero-worships you); Younger Female (Dislikes you); Twin Female (Neutral); Twin Female (Hates you); Younger Male (Dislikes you)"
+      },
+      "motivations": {
+        "personality": "Moody and impulsive",
+        "valuedPerson": "A teacher or mentor",
+        "valueMost": "Having a good time",
+        "feelAboutPeople": "Everyone is valuable",
+        "valuedPossession": "A letter"
+      },
+      "events": [
+        "Big problem: Lost your job or position",
+        "Made a friend: A partner or coworker",
+        "Happy love affair",
+        "Happy love affair"
+      ]
+    },
+    "gear": {
+      "startingMoney": 5000,
+      "items": [
+        {
+          "itemId": "light_pistol"
+        },
+        {
+          "itemId": "club"
+        },
+        {
+          "itemId": "kevlar_tshirt"
+        },
+        {
+          "itemId": "cyberoptic",
+          "humanityCostRolled": 10
+        },
+        {
+          "itemId": "cyberaudio",
+          "humanityCostRolled": 7
+        },
+        {
+          "itemId": "biomonitor",
+          "humanityCostRolled": 0
+        }
+      ]
+    },
+    "appearance": {
+      "skinTone": "olive",
+      "hairStyle": 4,
+      "hairColor": "pink",
+      "clothesStyle": 8,
+      "clothesColor": "gold_chrome"
+    }
+  },
+  {
+    "version": 1,
+    "identity": {
+      "handle": "Dust",
+      "realName": "Kira Mercer",
+      "roleId": "nomad",
+      "age": 27,
+      "gender": "Female",
+      "reputation": 3
+    },
+    "stats": {
+      "method": "random",
+      "points": 42,
+      "values": {
+        "INT": 3,
+        "REF": 8,
+        "TECH": 5,
+        "COOL": 3,
+        "ATTR": 4,
+        "LUCK": 3,
+        "MA": 4,
+        "BODY": 8,
+        "EMP": 4
+      }
+    },
+    "skills": {
+      "career": {
+        "family": 6,
+        "awareness_notice": 6,
+        "endurance": 5,
+        "melee": 1,
+        "rifle": 6,
+        "driving": 3,
+        "basic_tech": 5,
+        "wilderness_survival": 3,
+        "brawling": 1,
+        "athletics": 4
+      },
+      "pickup": {
+        "melee": 1,
+        "accounting": 1,
+        "play_instrument": 1,
+        "athletics": 1,
+        "aero_tech": 1,
+        "pick_lock": 2,
+        "pilot_dirigible": 1,
+        "system_knowledge": 1,
+        "know_language": 2
+      },
+      "details": {
+        "play_instrument": "Chromed Sax",
+        "know_language": "Russian"
+      },
+      "careerChoices": [],
+      "careerFreePicks": []
+    },
+    "lifepath": {
+      "style": {
+        "clothes": "Sleek corporate suits",
+        "hair": "Long and wild",
+        "affectation": "Mirrorshades, day and night",
+        "origin": "Pacific Islander / Oceanian",
+        "language": "Maori"
+      },
+      "family": {
+        "ranking": "Arcology residents",
+        "parents": "Both parents are alive",
+        "familyStatus": "Your family is in danger: Cursed by a hereditary feud",
+        "childhood": "In a decaying, once-upscale neighborhood",
+        "siblings": "7: Older Female (Likes you); Older Male (Neutral); Twin Male (Hates you); Younger Female (Hero-worships you); Older Male (Neutral); Older Male (Hero-worships you); Younger Male (Hates you)"
+      },
+      "motivations": {
+        "personality": "Picky and nervous",
+        "valuedPerson": "No one",
+        "valueMost": "Honor",
+        "feelAboutPeople": "Everyone is valuable",
+        "valuedPossession": "A photograph"
+      },
+      "events": [
+        "Nothing happened that year",
+        "Made an enemy — Who: A corporate executive | Cause: Foiled a plan of theirs | What they will do: Avoid you",
+        "Nothing happened that year",
+        "Big problem: Lost your job or position",
+        "Big problem: Lost your job or position",
+        "Happy love affair",
+        "Nothing happened that year",
+        "Made a friend: A teacher figure",
+        "Nothing happened that year",
+        "Nothing happened that year",
+        "Nothing happened that year"
+      ]
+    },
+    "gear": {
+      "startingMoney": 3000,
+      "items": [
+        {
+          "itemId": "shotgun"
+        },
+        {
+          "itemId": "heavy_pistol"
+        },
+        {
+          "itemId": "medium_armor_jacket"
+        },
+        {
+          "itemId": "muscle_bone_lace",
+          "humanityCostRolled": 10
+        }
+      ]
+    },
+    "appearance": {
+      "skinTone": "chrome",
+      "hairStyle": 3,
+      "hairColor": "cyan",
+      "clothesStyle": 2,
+      "clothesColor": "street_denim"
+    }
+  },
+  {
+    "version": 1,
+    "identity": {
+      "handle": "Slick",
+      "realName": "Marcus Vance",
+      "roleId": "fixer",
+      "age": 25,
+      "gender": "Male",
+      "reputation": 2
+    },
+    "stats": {
+      "method": "random",
+      "points": 55,
+      "values": {
+        "INT": 10,
+        "REF": 4,
+        "TECH": 7,
+        "COOL": 10,
+        "ATTR": 5,
+        "LUCK": 2,
+        "MA": 5,
+        "BODY": 2,
+        "EMP": 10
+      }
+    },
+    "skills": {
+      "career": {
+        "streetdeal": 8,
+        "awareness_notice": 4,
+        "forgery": 4,
+        "handgun": 4,
+        "brawling": 2,
+        "melee": 4,
+        "pick_lock": 2,
+        "pick_pocket": 2,
+        "intimidate": 8,
+        "persuasion": 2
+      },
+      "pickup": {
+        "forgery": 4,
+        "rifle": 1,
+        "persuasion": 2,
+        "perform": 2,
+        "electronics": 1,
+        "stock_market": 2,
+        "dodge_escape": 1,
+        "library_search": 1
+      },
+      "details": {},
+      "careerChoices": [],
+      "careerFreePicks": []
+    },
+    "lifepath": {
+      "style": {
+        "clothes": "Glowing smart-fabric that shifts color",
+        "hair": "Slicked back",
+        "affectation": "Wears a single strange earring",
+        "origin": "Eastern European",
+        "language": "Czech"
+      },
+      "family": {
+        "ranking": "Corporate office workers",
+        "parents": "Something happened to one or both parents: Left you with relatives",
+        "familyStatus": "Your family is in danger: Cursed by a hereditary feud",
+        "childhood": "In a decaying, once-upscale neighborhood",
+        "siblings": "6: Older Female (Hero-worships you); Older Male (Dislikes you); Older Male (Likes you); Younger Male (Hero-worships you); Older Female (Hero-worships you); Twin Male (Hero-worships you)"
+      },
+      "motivations": {
+        "personality": "Stable and serious",
+        "valuedPerson": "No one",
+        "valueMost": "Vengeance",
+        "feelAboutPeople": "People are wonderful",
+        "valuedPossession": "A book or diary"
+      },
+      "events": [
+        "Nothing happened that year",
+        "Big problem: Lost a large amount of money",
+        "Made a friend: A partner or coworker",
+        "Love affair with problems: Your lover's friends hate you",
+        "Nothing happened that year",
+        "Big win: Made a powerful connection",
+        "Big problem: Betrayed by someone close",
+        "Made an enemy — Who: A corporate executive | Cause: Insulted them publicly | What they will do: Backstab you indirectly",
+        "Nothing happened that year"
+      ]
+    },
+    "gear": {
+      "startingMoney": 8000,
+      "items": [
+        {
+          "itemId": "heavy_pistol"
+        },
+        {
+          "itemId": "light_smg"
+        },
+        {
+          "itemId": "light_armor_jacket"
+        },
+        {
+          "itemId": "cyberaudio",
+          "humanityCostRolled": 10
+        },
+        {
+          "itemId": "interface_plugs",
+          "humanityCostRolled": 5
+        },
+        {
+          "itemId": "biomonitor",
+          "humanityCostRolled": 0
+        }
+      ]
+    },
+    "appearance": {
+      "skinTone": "fair",
+      "hairStyle": 5,
+      "hairColor": "pink",
+      "clothesStyle": 4,
+      "clothesColor": "gold_chrome"
+    }
+  },
+  {
+    "version": 1,
+    "identity": {
+      "handle": "Kowalski",
+      "realName": "Dante Kowalski",
+      "roleId": "cop",
+      "age": 25,
+      "gender": "Non-binary",
+      "reputation": 3
+    },
+    "stats": {
+      "method": "random",
+      "points": 42,
+      "values": {
+        "INT": 6,
+        "REF": 8,
+        "TECH": 3,
+        "COOL": 7,
+        "ATTR": 4,
+        "LUCK": 3,
+        "MA": 2,
+        "BODY": 5,
+        "EMP": 4
+      }
+    },
+    "skills": {
+      "career": {
+        "authority": 9,
+        "awareness_notice": 1,
+        "handgun": 7,
+        "human_perception": 0,
+        "athletics": 2,
+        "education": 7,
+        "brawling": 6,
+        "melee": 1,
+        "interrogation": 5,
+        "streetwise": 2
+      },
+      "pickup": {
+        "oratory": 1,
+        "expert": 2,
+        "teaching": 1,
+        "wilderness_survival": 2,
+        "paint_draw": 1,
+        "zoology": 2,
+        "anthropology": 2,
+        "first_aid": 1,
+        "pilot_dirigible": 1,
+        "interview": 1
+      },
+      "details": {
+        "expert": "Street Lore"
+      },
+      "careerChoices": [],
+      "careerFreePicks": []
+    },
+    "lifepath": {
+      "style": {
+        "clothes": "Whatever was clean that morning",
+        "hair": "Asymmetric undercut",
+        "affectation": "Hums old songs",
+        "origin": "Pacific Islander / Oceanian",
+        "language": "English"
+      },
+      "family": {
+        "ranking": "Corporate middle managers",
+        "parents": "Something happened to one or both parents: Lost their memory and never came back",
+        "familyStatus": "Your family is doing fine",
+        "childhood": "In a small farming town",
+        "siblings": "3: Younger Male (Likes you); Older Female (Hates you); Younger Male (Neutral)"
+      },
+      "motivations": {
+        "personality": "Silly and scatterbrained",
+        "valuedPerson": "A brother or sister",
+        "valueMost": "Having a good time",
+        "feelAboutPeople": "People are obstacles to remove",
+        "valuedPossession": "A musical instrument"
+      },
+      "events": [
+        "Quick affairs and hot dates",
+        "Nothing happened that year",
+        "Big problem: Spent time in prison",
+        "Big problem: A close friend or lover died",
+        "Made an enemy — Who: A cop | Cause: Romantic rivalry | What they will do: Backstab you indirectly",
+        "Nothing happened that year",
+        "Nothing happened that year",
+        "Made a friend: Someone you met online",
+        "Love affair with problems: You have conflicting backgrounds"
+      ]
+    },
+    "gear": {
+      "startingMoney": 5000,
+      "items": [
+        {
+          "itemId": "heavy_pistol"
+        },
+        {
+          "itemId": "shotgun"
+        },
+        {
+          "itemId": "flak_vest"
+        },
+        {
+          "itemId": "cyberoptic",
+          "humanityCostRolled": 8
+        },
+        {
+          "itemId": "low_light",
+          "humanityCostRolled": 1
+        },
+        {
+          "itemId": "cyberaudio",
+          "humanityCostRolled": 6
+        }
+      ]
+    },
+    "appearance": {
+      "skinTone": "fair",
+      "hairStyle": 7,
+      "hairColor": "violet",
+      "clothesStyle": 10,
+      "clothesColor": "tactical_olive"
+    }
+  },
+  {
+    "version": 1,
+    "identity": {
+      "handle": "Vance Sterling",
+      "realName": "Tessa Delgado",
+      "roleId": "corporate",
+      "age": 24,
+      "gender": "Female",
+      "reputation": 1
+    },
+    "stats": {
+      "method": "random",
+      "points": 54,
+      "values": {
+        "INT": 10,
+        "REF": 4,
+        "TECH": 2,
+        "COOL": 8,
+        "ATTR": 9,
+        "LUCK": 6,
+        "MA": 5,
+        "BODY": 4,
+        "EMP": 6
+      }
+    },
+    "skills": {
+      "career": {
+        "resources": 8,
+        "awareness_notice": 3,
+        "human_perception": 4,
+        "education": 7,
+        "library_search": 8,
+        "social": 2,
+        "persuasion": 1,
+        "stock_market": 2,
+        "wardrobe_style": 4,
+        "personal_grooming": 1
+      },
+      "pickup": {
+        "oratory": 2,
+        "programming": 1,
+        "system_knowledge": 2,
+        "heavy_machinery": 1,
+        "chemistry": 3,
+        "fencing": 1,
+        "forgery": 1,
+        "mathematics": 2,
+        "swimming": 1
+      },
+      "details": {},
+      "careerChoices": [],
+      "careerFreePicks": []
+    },
+    "lifepath": {
+      "style": {
+        "clothes": "Armored jacket over everything",
+        "hair": "Perfect salon styling",
+        "affectation": "Hums old songs",
+        "origin": "Sub-Saharan African",
+        "language": "Yoruba"
+      },
+      "family": {
+        "ranking": "Wealthy old-money aristocrats",
+        "parents": "Something happened to one or both parents: Lost their memory and never came back",
+        "familyStatus": "Your family is doing fine",
+        "childhood": "Moving from town to town in a nomad pack",
+        "siblings": "Only child"
+      },
+      "motivations": {
+        "personality": "Friendly and outgoing",
+        "valuedPerson": "A teacher or mentor",
+        "valueMost": "Money",
+        "feelAboutPeople": "Everyone is valuable",
+        "valuedPossession": "A photograph"
+      },
+      "events": [
+        "Love affair with problems: Your lover's family hates you",
+        "Made an enemy — Who: An ex-friend | Cause: Caused the other to lose face | What they will do: Set you up for a fall",
+        "Made a friend: A partner or coworker",
+        "Big win: Saved someone important",
+        "Happy love affair",
+        "Made an enemy — Who: An ex-lover | Cause: Caused a loss of a lover or friend | What they will do: Avoid you",
+        "Big problem: Lost your memory of that year",
+        "Big problem: Framed for something you didn't do"
+      ]
+    },
+    "gear": {
+      "startingMoney": 8000,
+      "items": [
+        {
+          "itemId": "medium_pistol"
+        },
+        {
+          "itemId": "very_heavy_pistol"
+        },
+        {
+          "itemId": "kevlar_tshirt"
+        },
+        {
+          "itemId": "biomonitor",
+          "humanityCostRolled": 0
+        },
+        {
+          "itemId": "interface_plugs",
+          "humanityCostRolled": 4
+        },
+        {
+          "itemId": "skinweave",
+          "humanityCostRolled": 9
+        }
+      ]
+    },
+    "appearance": {
+      "skinTone": "olive",
+      "hairStyle": 10,
+      "hairColor": "violet",
+      "clothesStyle": 8,
+      "clothesColor": "cyber_cyan"
+    }
+  },
+  {
+    "version": 1,
+    "identity": {
+      "handle": "Ratchet",
+      "realName": "Victor Kowalski",
+      "roleId": "techie",
+      "age": 23,
+      "gender": "Female",
+      "reputation": 1
+    },
+    "stats": {
+      "method": "random",
+      "points": 47,
+      "values": {
+        "INT": 10,
+        "REF": 3,
+        "TECH": 7,
+        "COOL": 4,
+        "ATTR": 2,
+        "LUCK": 4,
+        "MA": 5,
+        "BODY": 2,
+        "EMP": 10
+      }
+    },
+    "skills": {
+      "career": {
+        "jury_rig": 8,
+        "awareness_notice": 0,
+        "basic_tech": 2,
+        "cybertech": 1,
+        "teaching": 10,
+        "education": 3,
+        "electronics": 2,
+        "pharmaceuticals": 5,
+        "demolitions": 4,
+        "av_tech": 5
+      },
+      "pickup": {
+        "play_instrument": 1,
+        "mathematics": 1,
+        "motorcycle": 1,
+        "library_search": 2,
+        "oratory": 2,
+        "heavy_weapons": 2,
+        "diagnose_illness": 2,
+        "gyro_tech": 1,
+        "swimming": 1
+      },
+      "details": {
+        "play_instrument": "Electric Guitar"
+      },
+      "careerChoices": [],
+      "careerFreePicks": [
+        "pharmaceuticals",
+        "demolitions",
+        "av_tech"
+      ]
+    },
+    "lifepath": {
+      "style": {
+        "clothes": "Sleek corporate suits",
+        "hair": "Slicked back",
+        "affectation": "Tattoos that crawl across the skin",
+        "origin": "East Asian",
+        "language": "Mandarin"
+      },
+      "family": {
+        "ranking": "Nomad pack members",
+        "parents": "Something happened to one or both parents: In hiding to protect you",
+        "familyStatus": "Your family is in danger: Exiled or driven out of their home",
+        "childhood": "In a small farming town",
+        "siblings": "Only child"
+      },
+      "motivations": {
+        "personality": "Arrogant and proud",
+        "valuedPerson": "A personal hero",
+        "valueMost": "Love",
+        "feelAboutPeople": "People are wonderful",
+        "valuedPossession": "A tool"
+      },
+      "events": [
+        "Love affair with problems: Your lover's family hates you",
+        "Big problem: Lost a large amount of money",
+        "Big win: Found a large sum of money",
+        "Nothing happened that year",
+        "Happy love affair",
+        "Made a friend: An old enemy who came around",
+        "Made a friend: An old lover"
+      ]
+    },
+    "gear": {
+      "startingMoney": 6000,
+      "items": [
+        {
+          "itemId": "light_smg"
+        },
+        {
+          "itemId": "medium_pistol"
+        },
+        {
+          "itemId": "light_armor_jacket"
+        },
+        {
+          "itemId": "cyberoptic",
+          "humanityCostRolled": 8
+        },
+        {
+          "itemId": "low_light",
+          "humanityCostRolled": 1
+        },
+        {
+          "itemId": "cyberarm",
+          "humanityCostRolled": 12
+        },
+        {
+          "itemId": "interface_plugs",
+          "humanityCostRolled": 2
+        }
+      ]
+    },
+    "appearance": {
+      "skinTone": "chrome",
+      "hairStyle": 5,
+      "hairColor": "pink",
+      "clothesStyle": 2,
+      "clothesColor": "neon_pink"
+    }
+  },
+  {
+    "version": 1,
+    "identity": {
+      "handle": "Doc Trauma",
+      "realName": "Nadia Chen",
+      "roleId": "medtechie",
+      "age": 21,
+      "gender": "Female",
+      "reputation": 2
+    },
+    "stats": {
+      "method": "random",
+      "points": 44,
+      "values": {
+        "INT": 9,
+        "REF": 5,
+        "TECH": 5,
+        "COOL": 3,
+        "ATTR": 4,
+        "LUCK": 3,
+        "MA": 3,
+        "BODY": 2,
+        "EMP": 10
+      }
+    },
+    "skills": {
+      "career": {
+        "medical_tech": 6,
+        "awareness_notice": 6,
+        "basic_tech": 2,
+        "diagnose_illness": 2,
+        "education": 3,
+        "cryotank_operation": 9,
+        "library_search": 0,
+        "pharmaceuticals": 2,
+        "zoology": 7,
+        "human_perception": 3
+      },
+      "pickup": {
+        "weaponsmith": 1,
+        "cybertech": 2,
+        "social": 2,
+        "motorcycle": 1,
+        "first_aid": 2,
+        "play_instrument": 1,
+        "endurance": 2,
+        "heavy_machinery": 2,
+        "perform": 1
+      },
+      "details": {
+        "play_instrument": "Laser Bass"
+      },
+      "careerChoices": [],
+      "careerFreePicks": []
+    },
+    "lifepath": {
+      "style": {
+        "clothes": "Vintage 20th-century thrift finds",
+        "hair": "Slicked back",
+        "affectation": "Hums old songs",
+        "origin": "Sub-Saharan African",
+        "language": "Zulu"
+      },
+      "family": {
+        "ranking": "Corporate office workers",
+        "parents": "Both parents are alive",
+        "familyStatus": "Your family is in danger: Exiled or driven out of their home",
+        "childhood": "Moving from town to town in a nomad pack",
+        "siblings": "7: Older Female (Dislikes you); Younger Male (Neutral); Younger Male (Likes you); Older Female (Hero-worships you); Younger Male (Neutral); Older Male (Likes you); Older Female (Hates you)"
+      },
+      "motivations": {
+        "personality": "Rebellious and antisocial",
+        "valuedPerson": "A lover",
+        "valueMost": "Having a good time",
+        "feelAboutPeople": "Every life is sacred",
+        "valuedPossession": "A piece of clothing"
+      },
+      "events": [
+        "Made a friend: A partner or coworker",
+        "Nothing happened that year",
+        "Big problem: Lost your job or position",
+        "Nothing happened that year",
+        "Big win: Found a rare piece of tech"
+      ]
+    },
+    "gear": {
+      "startingMoney": 5000,
+      "items": [
+        {
+          "itemId": "medium_pistol"
+        },
+        {
+          "itemId": "knife"
+        },
+        {
+          "itemId": "kevlar_tshirt"
+        },
+        {
+          "itemId": "biomonitor",
+          "humanityCostRolled": 0
+        },
+        {
+          "itemId": "cyberoptic",
+          "humanityCostRolled": 8
+        },
+        {
+          "itemId": "neural_processor",
+          "humanityCostRolled": 3
+        }
+      ]
+    },
+    "appearance": {
+      "skinTone": "fair",
+      "hairStyle": 5,
+      "hairColor": "red",
+      "clothesStyle": 7,
+      "clothesColor": "default"
+    }
+  }
+]

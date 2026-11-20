@@ -1,0 +1,590 @@
+{
+  "version": 1,
+  "maxLevel": 10,
+  "statGroups": [
+    "SPECIAL",
+    "ATTR",
+    "BODY",
+    "COOL",
+    "EMP",
+    "INT",
+    "REF",
+    "TECH"
+  ],
+  "skills": [
+    {
+      "id": "authority",
+      "name": "Authority",
+      "stat": "SPECIAL",
+      "description": "Use the weight of the badge to make people comply.",
+      "role": "cop"
+    },
+    {
+      "id": "charismatic_leadership",
+      "name": "Charismatic Leadership",
+      "stat": "SPECIAL",
+      "description": "Sway and command a crowd through performance.",
+      "role": "rocker"
+    },
+    {
+      "id": "combat_sense",
+      "name": "Combat Sense",
+      "stat": "SPECIAL",
+      "description": "Trained danger sense; adds to Initiative and Awareness.",
+      "role": "solo"
+    },
+    {
+      "id": "credibility",
+      "name": "Credibility",
+      "stat": "SPECIAL",
+      "description": "How far the public believes the stories you break.",
+      "role": "media"
+    },
+    {
+      "id": "family",
+      "name": "Family",
+      "stat": "SPECIAL",
+      "description": "Call on your nomad pack for help and resources.",
+      "role": "nomad"
+    },
+    {
+      "id": "interface",
+      "name": "Interface",
+      "stat": "SPECIAL",
+      "description": "Skill at running programs and moving through the Net.",
+      "role": "netrunner"
+    },
+    {
+      "id": "jury_rig",
+      "name": "Jury Rig",
+      "stat": "SPECIAL",
+      "description": "Patch anything together fast, at least for a while.",
+      "role": "techie"
+    },
+    {
+      "id": "medical_tech",
+      "name": "Medical Tech",
+      "stat": "SPECIAL",
+      "description": "Surgery and serious medical care.",
+      "role": "medtechie"
+    },
+    {
+      "id": "resources",
+      "name": "Resources",
+      "stat": "SPECIAL",
+      "description": "Pull company money, people and equipment.",
+      "role": "corporate"
+    },
+    {
+      "id": "streetdeal",
+      "name": "Streetdeal",
+      "stat": "SPECIAL",
+      "description": "Find goods, people and rumors on the street.",
+      "role": "fixer"
+    },
+    {
+      "id": "personal_grooming",
+      "name": "Personal Grooming",
+      "stat": "ATTR",
+      "description": "Looking your best, from skin care to hair."
+    },
+    {
+      "id": "wardrobe_style",
+      "name": "Wardrobe & Style",
+      "stat": "ATTR",
+      "description": "Knowing what to wear and how to wear it."
+    },
+    {
+      "id": "endurance",
+      "name": "Endurance",
+      "stat": "BODY",
+      "description": "Pushing through pain, hunger and exhaustion."
+    },
+    {
+      "id": "strength_feat",
+      "name": "Strength Feat",
+      "stat": "BODY",
+      "description": "Bending, lifting and breaking things."
+    },
+    {
+      "id": "swimming",
+      "name": "Swimming",
+      "stat": "BODY",
+      "description": "Moving through water."
+    },
+    {
+      "id": "interrogation",
+      "name": "Interrogation",
+      "stat": "COOL",
+      "description": "Pulling information out of unwilling people."
+    },
+    {
+      "id": "intimidate",
+      "name": "Intimidate",
+      "stat": "COOL",
+      "description": "Scaring people into doing what you want."
+    },
+    {
+      "id": "oratory",
+      "name": "Oratory",
+      "stat": "COOL",
+      "description": "Public speaking and speeches."
+    },
+    {
+      "id": "resist_torture_drugs",
+      "name": "Resist Torture/Drugs",
+      "stat": "COOL",
+      "description": "Holding out against pain and chemicals."
+    },
+    {
+      "id": "streetwise",
+      "name": "Streetwise",
+      "stat": "COOL",
+      "description": "Knowing the unwritten rules of the street."
+    },
+    {
+      "id": "human_perception",
+      "name": "Human Perception",
+      "stat": "EMP",
+      "description": "Reading people and spotting lies."
+    },
+    {
+      "id": "interview",
+      "name": "Interview",
+      "stat": "EMP",
+      "description": "Getting people to open up in conversation."
+    },
+    {
+      "id": "leadership",
+      "name": "Leadership",
+      "stat": "EMP",
+      "description": "Leading and motivating a group."
+    },
+    {
+      "id": "seduction",
+      "name": "Seduction",
+      "stat": "EMP",
+      "description": "Romantic and physical charm."
+    },
+    {
+      "id": "social",
+      "name": "Social",
+      "stat": "EMP",
+      "description": "Handling formal and high-society situations."
+    },
+    {
+      "id": "persuasion",
+      "name": "Persuasion & Fast Talk",
+      "stat": "EMP",
+      "description": "Talking people into things."
+    },
+    {
+      "id": "perform",
+      "name": "Perform",
+      "stat": "EMP",
+      "description": "Acting, singing and stage presence."
+    },
+    {
+      "id": "accounting",
+      "name": "Accounting",
+      "stat": "INT",
+      "description": "Bookkeeping and money trails."
+    },
+    {
+      "id": "anthropology",
+      "name": "Anthropology",
+      "stat": "INT",
+      "description": "Cultures and customs."
+    },
+    {
+      "id": "awareness_notice",
+      "name": "Awareness/Notice",
+      "stat": "INT",
+      "description": "Spotting clues, ambushes and hidden things."
+    },
+    {
+      "id": "biology",
+      "name": "Biology",
+      "stat": "INT",
+      "description": "Living systems."
+    },
+    {
+      "id": "botany",
+      "name": "Botany",
+      "stat": "INT",
+      "description": "Plants."
+    },
+    {
+      "id": "chemistry",
+      "name": "Chemistry",
+      "stat": "INT",
+      "description": "Chemicals and reactions."
+    },
+    {
+      "id": "composition",
+      "name": "Composition",
+      "stat": "INT",
+      "description": "Writing songs, articles and stories."
+    },
+    {
+      "id": "diagnose_illness",
+      "name": "Diagnose Illness",
+      "stat": "INT",
+      "description": "Identifying diseases and injuries."
+    },
+    {
+      "id": "education",
+      "name": "Education & General Knowledge",
+      "stat": "INT",
+      "description": "Book learning and general facts."
+    },
+    {
+      "id": "expert",
+      "name": "Expert",
+      "stat": "INT",
+      "description": "Deep knowledge of one chosen field.",
+      "needsDetail": true,
+      "detailLabel": "Field",
+      "repeatable": true
+    },
+    {
+      "id": "gamble",
+      "name": "Gamble",
+      "stat": "INT",
+      "description": "Games of chance and reading the odds."
+    },
+    {
+      "id": "geology",
+      "name": "Geology",
+      "stat": "INT",
+      "description": "Rocks, soil and minerals."
+    },
+    {
+      "id": "hide_evade",
+      "name": "Hide/Evade",
+      "stat": "INT",
+      "description": "Losing pursuers and lying low."
+    },
+    {
+      "id": "history",
+      "name": "History",
+      "stat": "INT",
+      "description": "Past events."
+    },
+    {
+      "id": "know_language",
+      "name": "Know Language",
+      "stat": "INT",
+      "description": "Speaking and reading another language.",
+      "needsDetail": true,
+      "detailLabel": "Language",
+      "repeatable": true
+    },
+    {
+      "id": "library_search",
+      "name": "Library Search",
+      "stat": "INT",
+      "description": "Finding information in databases and archives."
+    },
+    {
+      "id": "mathematics",
+      "name": "Mathematics",
+      "stat": "INT",
+      "description": "Math and calculation."
+    },
+    {
+      "id": "physics",
+      "name": "Physics",
+      "stat": "INT",
+      "description": "Physical laws."
+    },
+    {
+      "id": "programming",
+      "name": "Programming",
+      "stat": "INT",
+      "description": "Writing software and Net programs."
+    },
+    {
+      "id": "shadow_track",
+      "name": "Shadow/Track",
+      "stat": "INT",
+      "description": "Following someone without being seen."
+    },
+    {
+      "id": "stock_market",
+      "name": "Stock Market",
+      "stat": "INT",
+      "description": "Trading and markets."
+    },
+    {
+      "id": "system_knowledge",
+      "name": "System Knowledge",
+      "stat": "INT",
+      "description": "Layout and landmarks of the Net."
+    },
+    {
+      "id": "teaching",
+      "name": "Teaching",
+      "stat": "INT",
+      "description": "Passing skills on to others."
+    },
+    {
+      "id": "wilderness_survival",
+      "name": "Wilderness Survival",
+      "stat": "INT",
+      "description": "Living off the land."
+    },
+    {
+      "id": "zoology",
+      "name": "Zoology",
+      "stat": "INT",
+      "description": "Animals."
+    },
+    {
+      "id": "archery",
+      "name": "Archery",
+      "stat": "REF",
+      "description": "Bows and crossbows."
+    },
+    {
+      "id": "athletics",
+      "name": "Athletics",
+      "stat": "REF",
+      "description": "Running, climbing, jumping and throwing."
+    },
+    {
+      "id": "brawling",
+      "name": "Brawling",
+      "stat": "REF",
+      "description": "Street fighting."
+    },
+    {
+      "id": "dance",
+      "name": "Dance",
+      "stat": "REF",
+      "description": "Dancing."
+    },
+    {
+      "id": "dodge_escape",
+      "name": "Dodge & Escape",
+      "stat": "REF",
+      "description": "Avoiding attacks and slipping out of holds."
+    },
+    {
+      "id": "driving",
+      "name": "Driving",
+      "stat": "REF",
+      "description": "Cars and trucks."
+    },
+    {
+      "id": "fencing",
+      "name": "Fencing",
+      "stat": "REF",
+      "description": "Swords and blades in formal style."
+    },
+    {
+      "id": "handgun",
+      "name": "Handgun",
+      "stat": "REF",
+      "description": "Pistols."
+    },
+    {
+      "id": "heavy_weapons",
+      "name": "Heavy Weapons",
+      "stat": "REF",
+      "description": "Rocket launchers, grenade launchers and similar."
+    },
+    {
+      "id": "martial_arts",
+      "name": "Martial Arts",
+      "stat": "REF",
+      "description": "Trained unarmed fighting in one style.",
+      "needsDetail": true,
+      "detailLabel": "Style",
+      "repeatable": true
+    },
+    {
+      "id": "melee",
+      "name": "Melee",
+      "stat": "REF",
+      "description": "Knives, clubs and close weapons."
+    },
+    {
+      "id": "motorcycle",
+      "name": "Motorcycle",
+      "stat": "REF",
+      "description": "Bikes."
+    },
+    {
+      "id": "heavy_machinery",
+      "name": "Operate Heavy Machinery",
+      "stat": "REF",
+      "description": "Cranes, loaders and construction equipment."
+    },
+    {
+      "id": "pilot_gyro",
+      "name": "Pilot (Gyro)",
+      "stat": "REF",
+      "description": "Gyrocopters and helicopters."
+    },
+    {
+      "id": "pilot_fixed_wing",
+      "name": "Pilot (Fixed Wing)",
+      "stat": "REF",
+      "description": "Airplanes."
+    },
+    {
+      "id": "pilot_dirigible",
+      "name": "Pilot (Dirigible)",
+      "stat": "REF",
+      "description": "Airships."
+    },
+    {
+      "id": "pilot_vtol",
+      "name": "Pilot (Vectored Thrust Vehicle)",
+      "stat": "REF",
+      "description": "AVs and other vectored-thrust craft."
+    },
+    {
+      "id": "rifle",
+      "name": "Rifle",
+      "stat": "REF",
+      "description": "Rifles and shotguns."
+    },
+    {
+      "id": "stealth",
+      "name": "Stealth",
+      "stat": "REF",
+      "description": "Moving silently and unseen."
+    },
+    {
+      "id": "submachinegun",
+      "name": "Submachinegun",
+      "stat": "REF",
+      "description": "SMGs."
+    },
+    {
+      "id": "aero_tech",
+      "name": "Aero Tech",
+      "stat": "TECH",
+      "description": "Repairing aircraft."
+    },
+    {
+      "id": "av_tech",
+      "name": "AV Tech",
+      "stat": "TECH",
+      "description": "Repairing AVs."
+    },
+    {
+      "id": "basic_tech",
+      "name": "Basic Tech",
+      "stat": "TECH",
+      "description": "General repair of simple machines and electronics."
+    },
+    {
+      "id": "cryotank_operation",
+      "name": "Cryotank Operation",
+      "stat": "TECH",
+      "description": "Running medical cryo equipment."
+    },
+    {
+      "id": "cyberdeck_design",
+      "name": "Cyberdeck Design",
+      "stat": "TECH",
+      "description": "Designing and building cyberdecks."
+    },
+    {
+      "id": "cybertech",
+      "name": "CyberTech",
+      "stat": "TECH",
+      "description": "Maintaining and repairing cyberware."
+    },
+    {
+      "id": "demolitions",
+      "name": "Demolitions",
+      "stat": "TECH",
+      "description": "Setting and defusing explosives."
+    },
+    {
+      "id": "disguise",
+      "name": "Disguise",
+      "stat": "TECH",
+      "description": "Changing your appearance."
+    },
+    {
+      "id": "electronics",
+      "name": "Electronics",
+      "stat": "TECH",
+      "description": "Building and fixing electronic devices."
+    },
+    {
+      "id": "electronic_security",
+      "name": "Electronic Security",
+      "stat": "TECH",
+      "description": "Alarms, cameras and electronic locks."
+    },
+    {
+      "id": "first_aid",
+      "name": "First Aid",
+      "stat": "TECH",
+      "description": "Basic emergency care."
+    },
+    {
+      "id": "forgery",
+      "name": "Forgery",
+      "stat": "TECH",
+      "description": "Faking documents and IDs."
+    },
+    {
+      "id": "gyro_tech",
+      "name": "Gyro Tech",
+      "stat": "TECH",
+      "description": "Repairing gyros and helicopters."
+    },
+    {
+      "id": "paint_draw",
+      "name": "Paint or Draw",
+      "stat": "TECH",
+      "description": "Visual art."
+    },
+    {
+      "id": "photo_film",
+      "name": "Photo & Film",
+      "stat": "TECH",
+      "description": "Cameras, photos and video."
+    },
+    {
+      "id": "pharmaceuticals",
+      "name": "Pharmaceuticals",
+      "stat": "TECH",
+      "description": "Making and identifying drugs."
+    },
+    {
+      "id": "pick_lock",
+      "name": "Pick Lock",
+      "stat": "TECH",
+      "description": "Opening mechanical locks."
+    },
+    {
+      "id": "pick_pocket",
+      "name": "Pick Pocket",
+      "stat": "TECH",
+      "description": "Lifting things off people unnoticed."
+    },
+    {
+      "id": "play_instrument",
+      "name": "Play Instrument",
+      "stat": "TECH",
+      "description": "Playing a musical instrument.",
+      "needsDetail": true,
+      "detailLabel": "Instrument",
+      "repeatable": true
+    },
+    {
+      "id": "weaponsmith",
+      "name": "Weaponsmith",
+      "stat": "TECH",
+      "description": "Repairing and modifying weapons."
+    }
+  ]
+}
