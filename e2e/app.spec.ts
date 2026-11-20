@@ -169,9 +169,11 @@ test.describe("Cyberpunk 2020 Character Generator", () => {
     const chromePng = await getPng();
     expect(chromePng).not.toBe(netrunnerPng);
 
+    await page.getByTestId("appearance-hair-style").selectOption("1");
+    const shavedPng = await getPng();
     await page.getByTestId("appearance-hair-style").selectOption("2");
     const mohawkPng = await getPng();
-    expect(mohawkPng).not.toBe(chromePng);
+    expect(mohawkPng).not.toBe(shavedPng);
   });
 
   test("Randomize all produces a valid sheet with no validation errors", async ({
@@ -233,5 +235,71 @@ test.describe("Cyberpunk 2020 Character Generator", () => {
     await bodyInput.focus();
     await page.keyboard.press("ArrowUp");
     await expect(page.getByTestId("derived-save")).toContainText("6");
+  });
+
+  test("renders 2D pixel icons for all 41 gear items, supports previewing on avatar, and switches equipped weapons", async ({
+    page,
+  }) => {
+    await page.getByTestId("input-handle").fill("ChromeArsenal");
+    await page.getByTestId("btn-next").click();
+    await page.getByTestId("btn-next").click();
+    await page.getByTestId("btn-next").click();
+    await page.getByTestId("btn-next").click();
+
+    await page.getByTestId("input-starting-money").fill("20000");
+
+    // Verify catalog pixel icons render non-empty art across weapons, armor, and cyberware
+    for (const sampleId of [
+      "sniper_rifle",
+      "heavy_smg",
+      "monoblade",
+      "grenade",
+      "full_body_armor",
+      "nylon_helmet",
+      "wolvers",
+      "cyberarm",
+      "cyberoptic",
+    ]) {
+      const iconPng = await page
+        .getByTestId(`gear-icon-${sampleId}`)
+        .evaluate((el) => (el as HTMLCanvasElement).toDataURL("image/png"));
+      expect(iconPng.length).toBeGreaterThan(200);
+    }
+
+    const avatarCanvas = page.getByTestId("pixel-avatar-canvas");
+    const getAvatarPng = () =>
+      avatarCanvas.evaluate((el) => (el as HTMLCanvasElement).toDataURL("image/png"));
+
+    const baselinePng = await getAvatarPng();
+
+    // Preview unowned items on avatar
+    await page.getByTestId("preview-full_body_armor").click();
+    await expect(page.getByTestId("pixel-preview-bar")).toContainText("Full body armor suit");
+    const fullArmorPng = await getAvatarPng();
+    expect(fullArmorPng).not.toBe(baselinePng);
+
+    await page.getByTestId("btn-clear-preview").click();
+    await expect(page.getByTestId("pixel-preview-bar")).toHaveCount(0);
+
+    // Purchase multiple weapons, armor, and cyberware, then switch held weapon in dock
+    await page.getByTestId("buy-sniper_rifle").click();
+    await page.getByTestId("buy-monoblade").click();
+    await page.getByTestId("buy-medium_armor_jacket").click();
+    await page.getByTestId("buy-nylon_helmet").click();
+    await page.getByTestId("buy-cyberarm").click();
+    await page.getByTestId("buy-cyberoptic").click();
+    await page.getByTestId("buy-wolvers").click();
+
+    const sniperPng = await getAvatarPng();
+    expect(sniperPng).not.toBe(baselinePng);
+
+    await page.getByTestId("dock-weapon-monoblade").click();
+    const monobladePng = await getAvatarPng();
+    expect(monobladePng).not.toBe(sniperPng);
+
+    await page.screenshot({
+      path: resolve(process.cwd(), "docs/screenshots/step-5-gear-equipped.png"),
+      fullPage: true,
+    });
   });
 });

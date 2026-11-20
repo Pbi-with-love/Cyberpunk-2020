@@ -1,4 +1,5 @@
-import { useMemo, useState, type ChangeEvent } from "react";
+import { useMemo, useState, type ChangeEvent, type ReactNode } from "react";
+import { GearPixelIcon } from "../components/PixelAvatar/GearPixelIcon";
 import { PixelAvatarCanvas } from "../components/PixelAvatar/PixelAvatarCanvas";
 import { VerifyBadge } from "../components/VerifyBadge";
 import {
@@ -44,6 +45,45 @@ function getLifepathTableName(sectionId: string, tableId: string): string {
   const section = lifepathData.sections.find((s) => s.id === sectionId);
   const table = section?.tables.find((t) => t.id === tableId);
   return table?.name ?? tableId;
+}
+
+function SheetGearRow({
+  itemId,
+  cost,
+  children,
+}: {
+  itemId: string;
+  cost: number;
+  children: ReactNode;
+}) {
+  return (
+    <li
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        gap: "var(--space-3)",
+        padding: "var(--space-1) 0",
+        borderBottom: "1px solid var(--border-subtle)",
+        fontSize: "var(--text-sm)",
+      }}
+    >
+      <span
+        style={{
+          display: "inline-flex",
+          alignItems: "center",
+          gap: "var(--space-2)",
+          minWidth: 0,
+        }}
+      >
+        <GearPixelIcon itemId={itemId} size={28} />
+        <span>{children}</span>
+      </span>
+      <span className="mono" style={{ flexShrink: 0 }}>
+        {cost} {gearData.currency}
+      </span>
+    </li>
+  );
 }
 
 export function CharacterSheetStep({
@@ -879,17 +919,16 @@ export function CharacterSheetStep({
                 <p style={{ fontSize: "var(--text-xs)", color: "var(--text-muted)" }}>None</p>
               ) : (
                 <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "var(--space-1)" }}>
-                  {weaponItems.map(({ idx, def }) => (
-                    <li key={`w-${idx}`} style={kvRowStyle}>
-                      <span>
-                        <strong>{def?.name}</strong>{" "}
+                  {weaponItems.map(({ idx, def }) =>
+                    def ? (
+                      <SheetGearRow key={`w-${idx}`} itemId={def.id} cost={def.cost}>
+                        <strong>{def.name}</strong>{" "}
                         <span className="mono" style={{ fontSize: "var(--text-xs)", color: "var(--text-secondary)" }}>
-                          ({def?.damage}, WA {def && def.wa >= 0 ? `+${def.wa}` : def?.wa})
+                          ({def.damage}, WA {def.wa >= 0 ? `+${def.wa}` : def.wa})
                         </span>
-                      </span>
-                      <span className="mono">{def?.cost} {gearData.currency}</span>
-                    </li>
-                  ))}
+                      </SheetGearRow>
+                    ) : null,
+                  )}
                 </ul>
               )}
             </div>
@@ -902,17 +941,16 @@ export function CharacterSheetStep({
                 <p style={{ fontSize: "var(--text-xs)", color: "var(--text-muted)" }}>None</p>
               ) : (
                 <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "var(--space-1)" }}>
-                  {armorItems.map(({ idx, def }) => (
-                    <li key={`a-${idx}`} style={kvRowStyle}>
-                      <span>
-                        <strong>{def?.name}</strong>{" "}
+                  {armorItems.map(({ idx, def }) =>
+                    def ? (
+                      <SheetGearRow key={`a-${idx}`} itemId={def.id} cost={def.cost}>
+                        <strong>{def.name}</strong>{" "}
                         <span className="mono" style={{ fontSize: "var(--text-xs)", color: "var(--text-secondary)" }}>
-                          (SP {def?.sp}, {def?.covers.join("/")}, EV {def?.ev})
+                          (SP {def.sp}, {def.covers.join("/")}, EV {def.ev})
                         </span>
-                      </span>
-                      <span className="mono">{def?.cost} {gearData.currency}</span>
-                    </li>
-                  ))}
+                      </SheetGearRow>
+                    ) : null,
+                  )}
                 </ul>
               )}
             </div>
@@ -925,17 +963,16 @@ export function CharacterSheetStep({
                 <p style={{ fontSize: "var(--text-xs)", color: "var(--text-muted)" }}>None</p>
               ) : (
                 <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "var(--space-1)" }}>
-                  {cyberwareItems.map(({ entry, idx, def }) => (
-                    <li key={`c-${idx}`} style={kvRowStyle}>
-                      <span>
-                        <strong>{def?.name}</strong>{" "}
+                  {cyberwareItems.map(({ entry, idx, def }) =>
+                    def ? (
+                      <SheetGearRow key={`c-${idx}`} itemId={def.id} cost={def.cost}>
+                        <strong>{def.name}</strong>{" "}
                         <span className="hud-badge hud-badge--pink">
                           HC {entry.humanityCostRolled ?? 0}
                         </span>
-                      </span>
-                      <span className="mono">{def?.cost} {gearData.currency}</span>
-                    </li>
-                  ))}
+                      </SheetGearRow>
+                    ) : null,
+                  )}
                 </ul>
               )}
             </div>

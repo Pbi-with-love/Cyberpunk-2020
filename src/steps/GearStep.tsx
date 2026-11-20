@@ -1,5 +1,6 @@
 import { useMemo, useState, type KeyboardEvent } from "react";
 import { DiceButton } from "../components/DiceButton";
+import { GearPixelIcon } from "../components/PixelAvatar/GearPixelIcon";
 import { Tooltip } from "../components/Tooltip";
 import { VerifyBadge } from "../components/VerifyBadge";
 import {
@@ -26,6 +27,10 @@ import type { Character } from "../types";
 export interface GearStepProps {
   character: Character;
   onChange: (next: Character) => void;
+  previewItemId?: string | null;
+  onPreviewItem?: (itemId: string | null) => void;
+  primaryWeaponId?: string | null;
+  onSelectPrimaryWeapon?: (itemId: string) => void;
 }
 
 type CatalogTab = "all" | "weapons" | "armor" | "cyberware";
@@ -37,7 +42,152 @@ const CATALOG_TABS: { id: CatalogTab; label: string }[] = [
   { id: "cyberware", label: "Cyberware" },
 ];
 
-export function GearStep({ character, onChange }: GearStepProps) {
+interface CatalogCardHeaderProps {
+  itemId: string;
+  name: string;
+  badgeText: string;
+  badgeClassName: string;
+}
+
+function CatalogCardHeader({
+  itemId,
+  name,
+  badgeText,
+  badgeClassName,
+}: CatalogCardHeaderProps) {
+  return (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "flex-start",
+        gap: "var(--space-2)",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "var(--space-2)",
+          minWidth: 0,
+        }}
+      >
+        <GearPixelIcon
+          itemId={itemId}
+          size={40}
+          testId={`gear-icon-${itemId}`}
+        />
+        <strong style={{ fontFamily: "var(--font-display)" }}>{name}</strong>
+      </div>
+      <span className={`hud-badge ${badgeClassName}`} style={{ flexShrink: 0 }}>
+        {badgeText}
+      </span>
+    </div>
+  );
+}
+
+interface CatalogCardFooterProps {
+  itemId: string;
+  itemName: string;
+  cost: number;
+  overBudget: boolean;
+  isPreviewing: boolean;
+  onPreviewItem?: (itemId: string | null) => void;
+  onAdd: () => void;
+  addDisabled?: boolean;
+  addTitle?: string;
+}
+
+function CatalogCardFooter({
+  itemId,
+  itemName,
+  cost,
+  overBudget,
+  isPreviewing,
+  onPreviewItem,
+  onAdd,
+  addDisabled = false,
+  addTitle,
+}: CatalogCardFooterProps) {
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        alignItems: "center",
+        justifyContent: "space-between",
+        gap: "var(--space-2)",
+        paddingTop: "var(--space-2)",
+        borderTop: "1px solid var(--border-subtle)",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "var(--space-2)",
+          flexWrap: "wrap",
+        }}
+      >
+        <span
+          className="mono"
+          style={{ fontWeight: 700, color: "var(--neon-amber)" }}
+        >
+          {cost} {gearData.currency}
+        </span>
+        {overBudget ? (
+          <span className="hud-badge hud-badge--amber">Over budget</span>
+        ) : null}
+      </div>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: "var(--space-2)",
+          marginLeft: "auto",
+        }}
+      >
+        {onPreviewItem ? (
+          <button
+            type="button"
+            className={`hud-btn hud-btn--sm ${
+              isPreviewing ? "hud-btn--accent" : "hud-btn--ghost"
+            }`}
+            data-testid={`preview-${itemId}`}
+            aria-pressed={isPreviewing}
+            title={
+              isPreviewing
+                ? `Stop previewing ${itemName}`
+                : `Preview ${itemName} on avatar`
+            }
+            onClick={() => onPreviewItem(isPreviewing ? null : itemId)}
+          >
+            {isPreviewing ? "Previewing" : "Preview"}
+          </button>
+        ) : null}
+        <button
+          type="button"
+          className="hud-btn hud-btn--primary hud-btn--sm"
+          data-testid={`buy-${itemId}`}
+          disabled={addDisabled}
+          title={addTitle}
+          onClick={onAdd}
+        >
+          Add
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export function GearStep({
+  character,
+  onChange,
+  previewItemId = null,
+  onPreviewItem,
+  primaryWeaponId = null,
+  onSelectPrimaryWeapon,
+}: GearStepProps) {
   const [activeTab, setActiveTab] = useState<CatalogTab>("all");
 
   const specialLevel = Math.max(1, getSpecialAbilityLevel(character));
@@ -408,20 +558,24 @@ export function GearStep({ character, onChange }: GearStepProps) {
                 {gearData.weapons.map((w) => {
                   const overBudget = w.cost > remainingMoney;
                   const skillName = skillsById[w.skill]?.name ?? w.skill;
+                  const isPreviewing = previewItemId === w.id;
                   return (
-                    <article key={w.id} style={itemCardStyle}>
+                    <article
+                      key={w.id}
+                      style={{
+                        ...itemCardStyle,
+                        borderColor: isPreviewing
+                          ? "var(--border-pink)"
+                          : "var(--border-subtle)",
+                      }}
+                    >
                       <div>
-                        <div
-                          style={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                            alignItems: "flex-start",
-                            gap: "var(--space-2)",
-                          }}
-                        >
-                          <strong style={{ fontFamily: "var(--font-display)" }}>{w.name}</strong>
-                          <span className="hud-badge hud-badge--cyan">{w.type}</span>
-                        </div>
+                        <CatalogCardHeader
+                          itemId={w.id}
+                          name={w.name}
+                          badgeText={w.type}
+                          badgeClassName="hud-badge--cyan"
+                        />
                         <p
                           className="mono"
                           style={{
@@ -439,33 +593,15 @@ export function GearStep({ character, onChange }: GearStepProps) {
                         </p>
                       </div>
 
-                      <div
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "space-between",
-                          gap: "var(--space-2)",
-                          paddingTop: "var(--space-2)",
-                          borderTop: "1px solid var(--border-subtle)",
-                        }}
-                      >
-                        <div style={{ display: "flex", alignItems: "center", gap: "var(--space-2)" }}>
-                          <span className="mono" style={{ fontWeight: 700, color: "var(--neon-amber)" }}>
-                            {w.cost} {gearData.currency}
-                          </span>
-                          {overBudget ? (
-                            <span className="hud-badge hud-badge--amber">Over budget</span>
-                          ) : null}
-                        </div>
-                        <button
-                          type="button"
-                          className="hud-btn hud-btn--primary hud-btn--sm"
-                          data-testid={`buy-${w.id}`}
-                          onClick={() => handleAddWeaponOrArmor(w.id)}
-                        >
-                          Add
-                        </button>
-                      </div>
+                      <CatalogCardFooter
+                        itemId={w.id}
+                        itemName={w.name}
+                        cost={w.cost}
+                        overBudget={overBudget}
+                        isPreviewing={isPreviewing}
+                        onPreviewItem={onPreviewItem}
+                        onAdd={() => handleAddWeaponOrArmor(w.id)}
+                      />
                     </article>
                   );
                 })}
@@ -497,20 +633,24 @@ export function GearStep({ character, onChange }: GearStepProps) {
               >
                 {gearData.armor.map((a) => {
                   const overBudget = a.cost > remainingMoney;
+                  const isPreviewing = previewItemId === a.id;
                   return (
-                    <article key={a.id} style={itemCardStyle}>
+                    <article
+                      key={a.id}
+                      style={{
+                        ...itemCardStyle,
+                        borderColor: isPreviewing
+                          ? "var(--border-pink)"
+                          : "var(--border-subtle)",
+                      }}
+                    >
                       <div>
-                        <div
-                          style={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                            alignItems: "flex-start",
-                            gap: "var(--space-2)",
-                          }}
-                        >
-                          <strong style={{ fontFamily: "var(--font-display)" }}>{a.name}</strong>
-                          <span className="hud-badge hud-badge--green">SP {a.sp}</span>
-                        </div>
+                        <CatalogCardHeader
+                          itemId={a.id}
+                          name={a.name}
+                          badgeText={`SP ${a.sp}`}
+                          badgeClassName="hud-badge--green"
+                        />
                         <p
                           className="mono"
                           style={{
@@ -523,33 +663,15 @@ export function GearStep({ character, onChange }: GearStepProps) {
                         </p>
                       </div>
 
-                      <div
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "space-between",
-                          gap: "var(--space-2)",
-                          paddingTop: "var(--space-2)",
-                          borderTop: "1px solid var(--border-subtle)",
-                        }}
-                      >
-                        <div style={{ display: "flex", alignItems: "center", gap: "var(--space-2)" }}>
-                          <span className="mono" style={{ fontWeight: 700, color: "var(--neon-amber)" }}>
-                            {a.cost} {gearData.currency}
-                          </span>
-                          {overBudget ? (
-                            <span className="hud-badge hud-badge--amber">Over budget</span>
-                          ) : null}
-                        </div>
-                        <button
-                          type="button"
-                          className="hud-btn hud-btn--primary hud-btn--sm"
-                          data-testid={`buy-${a.id}`}
-                          onClick={() => handleAddWeaponOrArmor(a.id)}
-                        >
-                          Add
-                        </button>
-                      </div>
+                      <CatalogCardFooter
+                        itemId={a.id}
+                        itemName={a.name}
+                        cost={a.cost}
+                        overBudget={overBudget}
+                        isPreviewing={isPreviewing}
+                        onPreviewItem={onPreviewItem}
+                        onAdd={() => handleAddWeaponOrArmor(a.id)}
+                      />
                     </article>
                   );
                 })}
@@ -588,28 +710,27 @@ export function GearStep({ character, onChange }: GearStepProps) {
                     (reqId) => cyberwareById[reqId]?.name ?? reqId,
                   );
                   const overBudget = c.cost > remainingMoney;
+                  const isPreviewing = previewItemId === c.id;
 
                   return (
                     <article
                       key={c.id}
                       style={{
                         ...itemCardStyle,
-                        borderColor:
-                          missingReqs.length > 0 ? "var(--border-amber)" : "var(--border-subtle)",
+                        borderColor: isPreviewing
+                          ? "var(--border-pink)"
+                          : missingReqs.length > 0
+                            ? "var(--border-amber)"
+                            : "var(--border-subtle)",
                       }}
                     >
                       <div>
-                        <div
-                          style={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                            alignItems: "flex-start",
-                            gap: "var(--space-2)",
-                          }}
-                        >
-                          <strong style={{ fontFamily: "var(--font-display)" }}>{c.name}</strong>
-                          <span className="hud-badge hud-badge--pink">HC {c.humanityCost}</span>
-                        </div>
+                        <CatalogCardHeader
+                          itemId={c.id}
+                          name={c.name}
+                          badgeText={`HC ${c.humanityCost}`}
+                          badgeClassName="hud-badge--pink"
+                        />
                         <p
                           className="mono"
                           style={{
@@ -646,39 +767,21 @@ export function GearStep({ character, onChange }: GearStepProps) {
                         ) : null}
                       </div>
 
-                      <div
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "space-between",
-                          gap: "var(--space-2)",
-                          paddingTop: "var(--space-2)",
-                          borderTop: "1px solid var(--border-subtle)",
-                        }}
-                      >
-                        <div style={{ display: "flex", alignItems: "center", gap: "var(--space-2)" }}>
-                          <span className="mono" style={{ fontWeight: 700, color: "var(--neon-amber)" }}>
-                            {c.cost} {gearData.currency}
-                          </span>
-                          {overBudget ? (
-                            <span className="hud-badge hud-badge--amber">Over budget</span>
-                          ) : null}
-                        </div>
-                        <button
-                          type="button"
-                          className="hud-btn hud-btn--primary hud-btn--sm"
-                          data-testid={`buy-${c.id}`}
-                          disabled={missingReqs.length > 0}
-                          title={
-                            missingReqs.length > 0
-                              ? `Requires ${missingNames.join(", ")}`
-                              : `Install ${c.name}`
-                          }
-                          onClick={() => handleAddCyberware(c.id)}
-                        >
-                          Add
-                        </button>
-                      </div>
+                      <CatalogCardFooter
+                        itemId={c.id}
+                        itemName={c.name}
+                        cost={c.cost}
+                        overBudget={overBudget}
+                        isPreviewing={isPreviewing}
+                        onPreviewItem={onPreviewItem}
+                        onAdd={() => handleAddCyberware(c.id)}
+                        addDisabled={missingReqs.length > 0}
+                        addTitle={
+                          missingReqs.length > 0
+                            ? `Requires ${missingNames.join(", ")}`
+                            : `Install ${c.name}`
+                        }
+                      />
                     </article>
                   );
                 })}
@@ -710,6 +813,7 @@ export function GearStep({ character, onChange }: GearStepProps) {
               const weapon = weaponsById[selection.itemId];
               const armor = armorById[selection.itemId];
               const cyber = cyberwareById[selection.itemId];
+              const isInHand = Boolean(weapon && primaryWeaponId === selection.itemId);
               const missingReqs = cyber
                 ? getMissingRequirements(selection.itemId, character.gear.items).map(
                     (reqId) => cyberwareById[reqId]?.name ?? reqId,
@@ -732,6 +836,7 @@ export function GearStep({ character, onChange }: GearStepProps) {
                   }}
                 >
                   <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "var(--space-2)" }}>
+                    <GearPixelIcon itemId={selection.itemId} size={32} />
                     <strong>{catalog?.name ?? selection.itemId}</strong>
                     {weapon ? (
                       <span className="hud-badge hud-badge--cyan">Weapon · {weapon.damage}</span>
@@ -751,10 +856,35 @@ export function GearStep({ character, onChange }: GearStepProps) {
                     ) : null}
                   </div>
 
-                  <div style={{ display: "flex", alignItems: "center", gap: "var(--space-3)" }}>
-                    <span className="mono" style={{ color: "var(--neon-amber)", fontWeight: 600 }}>
+                  <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "var(--space-2)" }}>
+                    <span
+                      className="mono"
+                      style={{
+                        color: "var(--neon-amber)",
+                        fontWeight: 600,
+                        marginRight: "var(--space-1)",
+                      }}
+                    >
                       {catalog?.cost ?? 0} {gearData.currency}
                     </span>
+                    {weapon && onSelectPrimaryWeapon ? (
+                      <button
+                        type="button"
+                        className={`hud-btn hud-btn--sm ${
+                          isInHand ? "hud-btn--primary" : "hud-btn--ghost"
+                        }`}
+                        data-testid={`equip-${selection.itemId}-${idx}`}
+                        aria-pressed={isInHand}
+                        title={
+                          isInHand
+                            ? `${catalog?.name ?? selection.itemId} is equipped in hand`
+                            : `Equip ${catalog?.name ?? selection.itemId} in hand`
+                        }
+                        onClick={() => onSelectPrimaryWeapon(selection.itemId)}
+                      >
+                        {isInHand ? "In Hand" : "Equip"}
+                      </button>
+                    ) : null}
                     <button
                       type="button"
                       className="hud-btn hud-btn--danger hud-btn--sm"

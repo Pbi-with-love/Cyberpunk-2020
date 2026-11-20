@@ -1,5 +1,11 @@
 import { useId } from "react";
-import { cyberwareById, rolesById } from "../../data";
+import {
+  armorById,
+  catalogById,
+  cyberwareById,
+  rolesById,
+  weaponsById,
+} from "../../data";
 import {
   CLOTHES_COLORS,
   HAIR_COLORS,
@@ -15,6 +21,7 @@ import type {
   HairColorId,
   SkinToneId,
 } from "../../types";
+import { GearPixelIcon } from "./GearPixelIcon";
 import { PixelAvatarCanvas } from "./PixelAvatarCanvas";
 import {
   CLOTHES_PALETTES,
@@ -29,12 +36,40 @@ export interface PixelAvatarDockProps {
   character: Character;
   onChange: (next: Character) => void;
   onCanvasReady?: (canvas: HTMLCanvasElement | null) => void;
+  primaryWeaponId?: string | null;
+  previewItemId?: string | null;
+  onSelectPrimaryWeapon?: (itemId: string) => void;
+  onClearPreview?: () => void;
+}
+
+const WEAPON_PRIORITY = [
+  "sniper_rifle",
+  "assault_rifle",
+  "shotgun",
+  "monoblade",
+  "sword",
+  "heavy_smg",
+  "medium_smg",
+  "light_smg",
+  "very_heavy_pistol",
+  "heavy_pistol",
+  "medium_pistol",
+  "light_pistol",
+] as const;
+
+function getShortItemName(itemId: string): string {
+  const fullName = catalogById[itemId]?.name ?? itemId;
+  return fullName.replace(/\s*\([^)]*\)\s*$/, "");
 }
 
 export function PixelAvatarDock({
   character,
   onChange,
   onCanvasReady,
+  primaryWeaponId,
+  previewItemId,
+  onSelectPrimaryWeapon,
+  onClearPreview,
 }: PixelAvatarDockProps) {
   const hairSelectId = useId();
   const clothesSelectId = useId();
@@ -61,6 +96,34 @@ export function PixelAvatarDock({
   const cyberwareCount = character.gear.items.filter(
     (item) => Boolean(cyberwareById[item.itemId]),
   ).length;
+
+  const itemCounts = new Map<string, number>();
+  const ownedWeaponIds: string[] = [];
+  const ownedGearIds: string[] = [];
+
+  for (const selection of character.gear.items) {
+    const prev = itemCounts.get(selection.itemId) ?? 0;
+    itemCounts.set(selection.itemId, prev + 1);
+    if (prev === 0) {
+      if (weaponsById[selection.itemId]) {
+        ownedWeaponIds.push(selection.itemId);
+      } else {
+        ownedGearIds.push(selection.itemId);
+      }
+    }
+  }
+
+  const defaultWeaponId =
+    WEAPON_PRIORITY.find((id) => itemCounts.has(id)) ??
+    ownedWeaponIds[0] ??
+    null;
+  const activeWeaponId =
+    primaryWeaponId && weaponsById[primaryWeaponId] && itemCounts.has(primaryWeaponId)
+      ? primaryWeaponId
+      : defaultWeaponId;
+
+  const previewItem = previewItemId ? catalogById[previewItemId] : undefined;
+  const previewItemName = previewItem?.name ?? previewItemId ?? "";
 
   const updateAppearance = (patch: Partial<CharacterAppearance>) => {
     onChange({
@@ -147,8 +210,35 @@ export function PixelAvatarDock({
           height={384}
           testId="pixel-avatar-canvas"
           onCanvasReady={onCanvasReady}
+          primaryWeaponId={primaryWeaponId}
+          previewItemId={previewItemId}
         />
       </div>
+
+      {previewItemId ? (
+        <div
+          className="pixel-dock__preview-bar"
+          data-testid="pixel-preview-bar"
+          role="status"
+          aria-live="polite"
+        >
+          <div className="pixel-dock__preview-info">
+            <GearPixelIcon itemId={previewItemId} size={24} />
+            <span className="pixel-dock__preview-label">Previewing:</span>
+            <span className="pixel-dock__preview-name" title={previewItemName}>
+              {previewItemName}
+            </span>
+          </div>
+          <button
+            type="button"
+            className="pixel-dock__preview-clear"
+            data-testid="btn-clear-preview"
+            onClick={onClearPreview}
+          >
+            Clear
+          </button>
+        </div>
+      ) : null}
 
       <div className="pixel-dock__readout" aria-label="Character visual summary">
         <span className="pixel-dock__chip">
@@ -163,6 +253,82 @@ export function PixelAvatarDock({
           </span>
         ) : null}
       </div>
+
+      {character.gear.items.length > 0 ? (
+        <section
+          className="pixel-dock__loadout"
+          data-testid="pixel-dock-loadout"
+          aria-label="Equipped Gear & Cyberware"
+        >
+          <span className="pixel-dock__label">Equipped Gear &amp; Cyberware</span>
+          <div className="pixel-dock__loadout-chips">
+            {ownedWeaponIds.map((id) => {
+              const weapon = weaponsById[id];
+              const count = itemCounts.get(id) ?? 1;
+              const isActive = activeWeaponId === id;
+              const shortName = getShortItemName(id);
+              return (
+                <button
+                  key={id}
+                  type="button"
+                  data-testid={`dock-weapon-${id}`}
+                  aria-pressed={isActive}
+                  className={
+                    isActive
+                      ? "pixel-loadout-chip pixel-loadout-chip--weapon pixel-loadout-chip--active"
+                      : "pixel-loadout-chip pixel-loadout-chip--weapon"
+                  }
+                  title={`${weapon?.name ?? shortName}${weapon ? ` (${weapon.damage})` : ""} — Equip in avatar hand`}
+                  onClick={() => onSelectPrimaryWeapon?.(id)}
+                >
+                  <GearPixelIcon itemId={id} size={24} />
+                  <span className="pixel-loadout-chip__name">{shortName}</span>
+                  {count > 1 ? (
+                    <span className="pixel-loadout-chip__badge">×{count}</span>
+                  ) : null}
+                </button>
+              );
+            })}
+
+            {ownedGearIds.map((id) => {
+              const armor = armorById[id];
+              const cyber = cyberwareById[id];
+              const catalogItem = catalogById[id];
+              const count = itemCounts.get(id) ?? 1;
+              const shortName = getShortItemName(id);
+              const kindClass = armor
+                ? "pixel-loadout-chip--armor"
+                : cyber
+                  ? "pixel-loadout-chip--cyber"
+                  : "";
+              const tooltip = armor
+                ? `${armor.name} (SP ${armor.sp})`
+                : cyber
+                  ? `${cyber.name}${cyber.effect ? ` — ${cyber.effect}` : ""}`
+                  : (catalogItem?.name ?? shortName);
+
+              return (
+                <span
+                  key={id}
+                  data-testid={`dock-item-${id}`}
+                  className={
+                    kindClass
+                      ? `pixel-loadout-chip ${kindClass}`
+                      : "pixel-loadout-chip"
+                  }
+                  title={tooltip}
+                >
+                  <GearPixelIcon itemId={id} size={24} />
+                  <span className="pixel-loadout-chip__name">{shortName}</span>
+                  {count > 1 ? (
+                    <span className="pixel-loadout-chip__badge">×{count}</span>
+                  ) : null}
+                </span>
+              );
+            })}
+          </div>
+        </section>
+      ) : null}
 
       <div className="pixel-dock__controls">
         <div className="pixel-dock__group">

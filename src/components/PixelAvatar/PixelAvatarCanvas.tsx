@@ -11,6 +11,8 @@ export interface PixelAvatarCanvasProps {
   className?: string;
   ariaLabel?: string;
   onCanvasReady?: (canvas: HTMLCanvasElement | null) => void;
+  primaryWeaponId?: string | null;
+  previewItemId?: string | null;
 }
 
 function queryReducedMotion(): boolean {
@@ -29,6 +31,8 @@ export function PixelAvatarCanvas({
   className,
   ariaLabel,
   onCanvasReady,
+  primaryWeaponId,
+  previewItemId,
 }: PixelAvatarCanvasProps) {
   const resolvedTestId =
     testId !== undefined
@@ -82,8 +86,18 @@ export function PixelAvatarCanvas({
       frame: reducedMotion ? 0 : frame,
       width,
       height,
+      primaryWeaponId,
+      previewItemId,
     });
-  }, [character, frame, height, reducedMotion, width]);
+  }, [
+    character,
+    frame,
+    height,
+    previewItemId,
+    primaryWeaponId,
+    reducedMotion,
+    width,
+  ]);
 
   return (
     <canvas

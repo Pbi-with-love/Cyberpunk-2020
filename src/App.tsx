@@ -61,6 +61,8 @@ export function App() {
   const [statusMessage, setStatusMessage] = useState<string | null>(null);
   const [importError, setImportError] = useState<string | null>(null);
   const [selectedSample, setSelectedSample] = useState<string>("");
+  const [primaryWeaponId, setPrimaryWeaponId] = useState<string | null>(null);
+  const [previewItemId, setPreviewItemId] = useState<string | null>(null);
   const avatarCanvasRef = useRef<HTMLCanvasElement | null>(null);
 
   const handleCharacterChange = useCallback((nextRaw: Character) => {
@@ -75,6 +77,7 @@ export function App() {
     (target: WizardStep) => {
       if (target <= step) {
         setStepErrors([]);
+        if (target !== 5) setPreviewItemId(null);
         setStep(target);
         return;
       }
@@ -87,6 +90,7 @@ export function App() {
         }
       }
       setStepErrors([]);
+      if (target !== 5) setPreviewItemId(null);
       setStep(target);
     },
     [character, step],
@@ -100,14 +104,18 @@ export function App() {
     }
     setStepErrors([]);
     if (step < 6) {
-      setStep((step + 1) as WizardStep);
+      const nextStep = (step + 1) as WizardStep;
+      if (nextStep !== 5) setPreviewItemId(null);
+      setStep(nextStep);
     }
   }, [character, step]);
 
   const handleBack = useCallback(() => {
     setStepErrors([]);
     if (step > 1) {
-      setStep((step - 1) as WizardStep);
+      const prevStep = (step - 1) as WizardStep;
+      if (prevStep !== 5) setPreviewItemId(null);
+      setStep(prevStep);
     }
   }, [step]);
 
@@ -116,6 +124,8 @@ export function App() {
     setCharacter(randomized);
     setStepErrors([]);
     setImportError(null);
+    setPrimaryWeaponId(null);
+    setPreviewItemId(null);
     setStatusMessage("Generated full random character.");
     setSelectedSample("");
     setStep(6);
@@ -126,6 +136,8 @@ export function App() {
     setStep(1);
     setStepErrors([]);
     setImportError(null);
+    setPrimaryWeaponId(null);
+    setPreviewItemId(null);
     setStatusMessage(null);
     setSelectedSample("");
   }, []);
@@ -138,6 +150,8 @@ export function App() {
     setCharacter(structuredClone(found));
     setStepErrors([]);
     setImportError(null);
+    setPrimaryWeaponId(null);
+    setPreviewItemId(null);
     setStatusMessage(`Loaded sample character: ${found.identity.handle}`);
     setStep(6);
   }, []);
@@ -305,7 +319,14 @@ export function App() {
             <LifepathStep character={character} onChange={handleCharacterChange} />
           )}
           {step === 5 && (
-            <GearStep character={character} onChange={handleCharacterChange} />
+            <GearStep
+              character={character}
+              onChange={handleCharacterChange}
+              previewItemId={previewItemId}
+              onPreviewItem={setPreviewItemId}
+              primaryWeaponId={primaryWeaponId}
+              onSelectPrimaryWeapon={setPrimaryWeaponId}
+            />
           )}
           {step === 6 && (
             <CharacterSheetStep
@@ -361,6 +382,10 @@ export function App() {
           <PixelAvatarDock
             character={character}
             onChange={handleCharacterChange}
+            primaryWeaponId={primaryWeaponId}
+            previewItemId={previewItemId}
+            onSelectPrimaryWeapon={setPrimaryWeaponId}
+            onClearPreview={() => setPreviewItemId(null)}
             onCanvasReady={(canvas) => {
               avatarCanvasRef.current = canvas;
             }}
